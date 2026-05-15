@@ -1,0 +1,1274 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <script>try{if(localStorage.getItem('theme')==='dark')document.documentElement.setAttribute('data-theme','dark')}catch(e){}</script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>About — Mohammed Fazil Arfath, Sr. Digital Marketing Specialist</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      :root {
+        --side-space: clamp(20px, 4vw, 42px);
+        --nav-height: 78px;
+        --section-space: calc(var(--side-space) + 68px);
+        --max: 780px;
+        --nav-bg: rgba(241,242,246,0.88);
+        --nav-border: rgba(32,34,48,0.06);
+        --nav-text: #1f2230;
+        --nav-muted: #666e7d;
+        --menu-bg: #f7f7fb;
+        --menu-color: #4a4f5d;
+        --btn-bg: #f7f7fb;
+        --btn-color: #202432;
+        --page-bg: radial-gradient(ellipse 160% 60% at 50% 0%, #f7f8fb 0%, #ececf0 60%);
+        --page-color: #1f2230;
+        --section-text: #111318;
+        --muted-text: #6b7280;
+        --card-bg: rgba(255,255,255,0.75);
+        --card-border: rgba(0,0,0,0.07);
+        /* pill tokens */
+        --pill-bg: rgba(247,247,251,0.55);
+        --pill-border: rgba(32,33,45,0.07);
+        /* content tokens */
+        --heading-color: #111318;
+        --body-color: #4b5563;
+        --label-color: #111318;
+        --subtle-color: #6b7280;
+        --pill-color: #3a3f50;
+        --highlight-bg: rgba(255,255,255,0.7);
+        --highlight-border: rgba(0,0,0,0.07);
+        --skill-pill-bg: #ffffff;
+        --skill-pill-border: rgba(0,0,0,0.08);
+        --skill-pill-color: #1c2030;
+        --work-badge-color: #3a3f50;
+        --work-meta-strong: #111318;
+        --work-meta-span: #6b7280;
+        --work-bullet-color: #4b5563;
+        --work-bullet-dot: #9ca3af;
+        --work-card-bg: rgba(255,255,255,0.75);
+        --work-card-border: rgba(0,0,0,0.07);
+        --list-border: rgba(0,0,0,0.06);
+      }
+
+      [data-theme="dark"] {
+        --nav-bg: rgba(14,17,20,0.92);
+        --nav-border: rgba(255,255,255,0.07);
+        --nav-text: #e8eaf0;
+        --nav-muted: #a0a8b8;
+        --menu-bg: rgba(255,255,255,0.06);
+        --menu-color: rgba(255,255,255,0.85);
+        --btn-bg: rgba(255,255,255,0.08);
+        --btn-color: #e8eaf0;
+        --page-bg: #0b0e10;
+        --page-color: #e8eaf0;
+        --section-text: #f0f2f8;
+        --muted-text: rgba(255,255,255,0.65);
+        --card-bg: rgba(255,255,255,0.05);
+        --card-border: rgba(255,255,255,0.08);
+        /* pill tokens */
+        --pill-bg: rgba(255,255,255,0.07);
+        --pill-border: rgba(255,255,255,0.12);
+        /* content tokens */
+        --heading-color: #ffffff;
+        --body-color: rgba(255,255,255,0.7);
+        --label-color: #eaeef8;
+        --subtle-color: rgba(255,255,255,0.55);
+        --pill-color: rgba(255,255,255,0.85);
+        --highlight-bg: rgba(255,255,255,0.06);
+        --highlight-border: rgba(255,255,255,0.1);
+        --skill-pill-bg: rgba(255,255,255,0.07);
+        --skill-pill-border: rgba(255,255,255,0.12);
+        --skill-pill-color: #eaeef8;
+        --work-badge-color: rgba(255,255,255,0.85);
+        --work-meta-strong: #f0f2f8;
+        --work-meta-span: rgba(255,255,255,0.6);
+        --work-bullet-color: rgba(255,255,255,0.7);
+        --work-bullet-dot: rgba(255,255,255,0.35);
+        --work-card-bg: rgba(255,255,255,0.05);
+        --work-card-border: rgba(255,255,255,0.08);
+        --list-border: rgba(255,255,255,0.08);
+      }
+
+      * { box-sizing: border-box; }
+
+      html { transition: background 0.4s ease, color 0.4s ease; }
+
+      body {
+        margin: 0;
+        font-family: "Inter", sans-serif;
+        background: var(--page-bg);
+        color: var(--page-color);
+        padding-top: var(--nav-height);
+        -webkit-font-smoothing: antialiased;
+        transition: background 0.4s ease, color 0.4s ease;
+      }
+
+      [data-theme="dark"] body { background: #0b0e10; }
+
+      #theme-canvas {
+        display: none; position: fixed; inset: 0; z-index: 0; pointer-events: none;
+      }
+      [data-theme="dark"] #theme-canvas { display: block; }
+
+      /* ── NAVBAR ── */
+      .navbar {
+        position: fixed;
+        top: 0; left: 0;
+        width: 100%;
+        min-height: var(--nav-height);
+        padding: 14px var(--side-space);
+        z-index: 100;
+        display: grid;
+        grid-template-columns: 1fr auto 1fr;
+        align-items: center;
+        background: var(--nav-bg);
+        backdrop-filter: blur(10px);
+        border-bottom: 1px solid var(--nav-border);
+        transition: background 0.4s ease, border-color 0.4s ease;
+      }
+
+      .nav-profile {
+        display: flex; align-items: center; gap: 10px; justify-self: start;
+      }
+
+      .nav-profile-avatar {
+        width: 40px; height: 40px; border-radius: 50%;
+        background: url("assets/img.png") center/cover no-repeat;
+        box-shadow: 0 8px 20px rgba(31, 34, 48, 0.2);
+      }
+
+      .nav-profile-text strong {
+        display: block; font-size: 18px; font-weight: 600; line-height: 1.1;
+        color: var(--nav-text); transition: color 0.4s ease;
+      }
+
+      .nav-profile-text span {
+        color: var(--nav-muted); font-size: 14px; transition: color 0.4s ease;
+      }
+
+      .nav-right {
+        display: flex; align-items: center; gap: 10px; justify-self: end;
+      }
+
+      .menu {
+        display: flex; gap: 24px; background: var(--menu-bg);
+        padding: 12px 22px; border-radius: 999px;
+        box-shadow: 0 10px 30px rgba(32, 33, 45, 0.07);
+        font-size: 14px; color: var(--menu-color);
+        transition: background 0.4s ease, color 0.4s ease;
+      }
+
+      .menu a { color: inherit; text-decoration: none; transition: opacity 0.2s ease; }
+      .menu a:hover { opacity: 0.7; }
+
+      .connect-btn {
+        border: 0; color: #ffffff !important; background: #1a1a1a;
+        border-radius: 999px; padding: 12px 22px; font-weight: 600; cursor: pointer;
+        font-family: "Inter", sans-serif; font-size: 14px;
+        box-shadow: 0 10px 26px rgba(36, 36, 50, 0.1);
+        transition: background 0.2s ease, opacity 0.2s ease;
+      }
+      [data-theme="dark"] .connect-btn { background: #ffffff; color: #0b0e10 !important; }
+      .connect-btn:hover { opacity: 0.8; }
+
+      /* ── Theme Toggle Pill ── */
+      .theme-toggle {
+        display: inline-flex; align-items: center; padding: 4px; border-radius: 999px;
+        background: var(--menu-bg); border: 1px solid var(--nav-border);
+        cursor: pointer; box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+        transition: background 0.4s ease, border-color 0.4s ease;
+        position: relative; width: 64px; height: 32px; flex-shrink: 0;
+      }
+      .theme-toggle-track {
+        position: absolute; inset: 4px; border-radius: 999px;
+        display: flex; align-items: center; justify-content: space-between; padding: 0 4px;
+      }
+      .theme-toggle-icon {
+        width: 20px; height: 20px; border-radius: 50%;
+        display: flex; align-items: center; justify-content: center;
+        font-size: 11px; flex-shrink: 0; z-index: 1;
+      }
+      .theme-toggle-thumb {
+        position: absolute; top: 4px; width: 24px; height: 24px; border-radius: 50%;
+        background: #fff; box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+        transition: left 0.3s cubic-bezier(0.4,0,0.2,1), background 0.3s ease; left: 4px;
+      }
+      [data-theme="dark"] .theme-toggle-thumb { left: calc(100% - 28px); background: #1c2030; }
+      [data-theme="dark"] .theme-toggle { background: rgba(255,255,255,0.08); border-color: rgba(255,255,255,0.12); }
+
+      /* ── HERO ── */
+      .hero {
+        min-height: 100svh;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        padding: 0 var(--section-space) 0;
+        text-align: center;
+        gap: 48px;
+      }
+
+      /* ── ABOUT SECTION (from home page) ── */
+      .about {
+        min-height: 100svh;
+        padding: 32px var(--section-space) 32px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        position: relative;
+        z-index: 1;
+      }
+
+      .about-pill {
+        width: max-content;
+        margin: 0 auto 12px;
+        padding: 7px 16px;
+        border-radius: 999px;
+        background: var(--pill-bg);
+        color: var(--pill-color);
+        font-size: 13px;
+        font-weight: 600;
+        box-shadow: 0 4px 14px rgba(32, 33, 45, 0.04);
+        border: 1px solid var(--pill-border);
+        backdrop-filter: blur(6px);
+        transition: background 0.4s ease, color 0.4s ease, border-color 0.4s ease;
+      }
+
+      .about-grid {
+        max-width: 1100px;
+        width: 100%;
+        margin: 0 auto;
+        display: grid;
+        grid-template-columns: 1.08fr 0.92fr;
+        gap: 28px;
+        align-items: stretch;
+      }
+
+      .about-copy {
+        min-height: 0;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        gap: 8px;
+        padding: 2px 0;
+      }
+
+      .about-copy h2 {
+        margin: 0 0 6px;
+        font-size: clamp(30px, 3.6vw, 46px);
+        line-height: 1.06;
+        letter-spacing: -1.2px;
+        white-space: nowrap;
+        color: var(--section-text);
+        transition: color 0.4s ease;
+      }
+
+      .about-copy p {
+        margin: 0 0 4px;
+        max-width: 560px;
+        color: var(--body-color);
+        font-size: 14.5px;
+        line-height: 1.55;
+        transition: color 0.4s ease;
+      }
+
+      .about-text { padding-right: 20px; }
+
+      .about-highlights {
+        margin: 4px 0 0;
+        padding: 0;
+        list-style: none;
+        display: grid;
+        gap: 5px;
+        max-width: 560px;
+      }
+
+      .about-highlights li {
+        color: var(--body-color);
+        font-size: 13.5px;
+        line-height: 1.45;
+        transition: color 0.4s ease;
+      }
+
+      .about-stats {
+        margin-top: 10px;
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 10px;
+        max-width: 560px;
+      }
+
+      .about-card {
+        background: var(--highlight-bg);
+        border-radius: 12px;
+        padding: 12px 16px;
+        box-shadow: inset 0 0 0 1px rgba(24, 27, 36, 0.03);
+        transition: background 0.4s ease;
+      }
+
+      .about-card strong {
+        display: block;
+        font-size: 28px;
+        margin-bottom: 3px;
+        letter-spacing: -0.8px;
+        color: var(--section-text);
+        transition: color 0.4s ease;
+      }
+
+      .about-card span {
+        color: var(--subtle-color);
+        font-size: 13px;
+        transition: color 0.4s ease;
+      }
+
+      .about-image {
+        width: 100%;
+        min-height: 0;
+        height: 100%;
+        max-width: 460px;
+        justify-self: end;
+        align-self: stretch;
+        border-radius: 14px;
+        background: url("assets/img.png")
+          center center/cover no-repeat;
+        box-shadow: 0 18px 34px rgba(25, 30, 45, 0.16);
+      }
+
+      @media (max-width: 980px) {
+        .about-grid {
+          grid-template-columns: 1fr;
+          gap: 24px;
+        }
+
+        .about-image {
+          height: 400px;
+          max-width: 100%;
+        }
+
+        .about-copy h2 {
+          white-space: normal;
+        }
+      }
+
+      .hero-text {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 16px;
+      }
+
+      h1 {
+        margin: 0;
+        font-size: clamp(34px, 4.6vw, 58px);
+        line-height: 1.08;
+        font-weight: 800;
+        max-width: 780px;
+        letter-spacing: -1.8px;
+        color: var(--heading-color);
+        transition: color 0.4s ease;
+      }
+
+      .hero-sub {
+        margin: 0;
+        max-width: 500px;
+        font-size: 16.5px;
+        line-height: 1.65;
+        color: var(--muted-text);
+        transition: color 0.4s ease;
+      }
+
+      /* ── STATS inside hero ── */
+      .stats-inner {
+        width: 100%;
+        max-width: var(--max);
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 0;
+        border-top: 1px solid var(--list-border);
+        border-bottom: 1px solid var(--list-border);
+        margin-bottom: 48px;
+        transition: border-color 0.4s ease;
+      }
+
+      .stat-cell {
+        padding: 26px 16px;
+        border-right: 1px solid var(--list-border);
+        text-align: center;
+        transition: border-color 0.4s ease;
+      }
+
+      .stat-cell:last-child { border-right: none; }
+
+      .stat-cell strong {
+        display: block;
+        font-size: clamp(26px, 2.8vw, 36px);
+        font-weight: 800;
+        letter-spacing: -1.2px;
+        color: var(--heading-color);
+        line-height: 1;
+        margin-bottom: 6px;
+        transition: color 0.4s ease;
+      }
+
+      .stat-cell span {
+        font-size: 12.5px;
+        color: var(--muted-text);
+        font-weight: 500;
+        letter-spacing: 0.01em;
+        transition: color 0.4s ease;
+      }
+
+      /* ── EDITORIAL SECTIONS ── */
+      .about-body {
+        padding: 0 var(--section-space) 60px;
+      }
+
+      .about-body-inner {
+        max-width: var(--max);
+        margin: 0 auto;
+      }
+
+      /* Each block */
+      .ab-block {
+        padding: 52px 0;
+        border-bottom: 1px solid var(--list-border);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 24px;
+        text-align: center;
+        transition: border-color 0.4s ease;
+      }
+
+      .ab-block:last-child { border-bottom: none; }
+
+      /* Number + heading row — now a centered pill */
+      .ab-head {
+        display: flex;
+        justify-content: center;
+        margin-bottom: 4px;
+      }
+
+      .ab-pill {
+        display: inline-flex;
+        align-items: center;
+        gap: 6px;
+        padding: 7px 16px;
+        border-radius: 999px;
+        background: var(--highlight-bg);
+        border: 1px solid var(--highlight-border);
+        box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+        font-size: 13px;
+        font-weight: 600;
+        color: var(--pill-color);
+        letter-spacing: 0.01em;
+        backdrop-filter: blur(8px);
+        transition: background 0.4s ease, color 0.4s ease, border-color 0.4s ease;
+      }
+
+      .ab-num { display: none; }
+
+      .ab-head h2 {
+        margin: 0;
+        font-size: clamp(20px, 2.4vw, 26px);
+        font-weight: 700;
+        letter-spacing: -0.5px;
+        color: var(--heading-color);
+        line-height: 1.2;
+        transition: color 0.4s ease;
+      }
+
+      /* Body text */
+      .ab-content {
+        width: 100%;
+        max-width: 680px;
+        text-align: left;
+      }
+
+      .ab-content p {
+        margin: 0 0 14px;
+        font-size: 15.5px;
+        line-height: 1.82;
+        color: var(--body-color);
+        max-width: 640px;
+        transition: color 0.4s ease;
+      }
+
+      .ab-content p:last-child { margin-bottom: 0; }
+      .ab-content strong { color: var(--heading-color); font-weight: 600; transition: color 0.4s ease; }
+
+      /* Who I am — highlight strip */
+      .ab-highlight {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 12px;
+        width: 100%;
+        text-align: left;
+      }
+
+      .ab-highlight-item {
+        background: var(--highlight-bg);
+        border: 1px solid var(--highlight-border);
+        border-radius: 14px;
+        padding: 18px 20px;
+        box-shadow: 0 1px 3px rgba(0,0,0,0.04);
+        transition: background 0.4s ease, border-color 0.4s ease;
+      }
+
+      .ab-highlight-item strong {
+        display: block;
+        font-size: 22px;
+        font-weight: 800;
+        letter-spacing: -0.8px;
+        color: var(--heading-color);
+        line-height: 1;
+        margin-bottom: 5px;
+        transition: color 0.4s ease;
+      }
+
+      .ab-highlight-item span {
+        font-size: 12px;
+        color: var(--muted-text);
+        font-weight: 500;
+        transition: color 0.4s ease;
+      }
+
+      /* Specialisms — table list */
+      .ab-list {
+        margin: 4px 0 0;
+        padding: 0;
+        list-style: none;
+        display: flex;
+        flex-direction: column;
+        border-top: 1px solid var(--list-border);
+        transition: border-color 0.4s ease;
+      }
+
+      .ab-list li {
+        display: flex;
+        align-items: flex-start;
+        gap: 0;
+        padding: 16px 0;
+        border-bottom: 1px solid var(--list-border);
+        transition: border-color 0.4s ease;
+      }
+
+      .ab-list li:last-child { border-bottom: none; }
+
+      .ab-list-label {
+        font-weight: 600;
+        color: var(--label-color);
+        min-width: 210px;
+        flex-shrink: 0;
+        padding-right: 24px;
+        font-size: 14px;
+        line-height: 1.6;
+        transition: color 0.4s ease;
+      }
+
+      .ab-list-desc {
+        color: var(--muted-text);
+        font-size: 14px;
+        line-height: 1.7;
+        transition: color 0.4s ease;
+      }
+
+      /* Skills pills */
+      .skill-pills {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+        justify-content: center;
+      }
+
+      .skill-pill {
+        padding: 8px 16px;
+        border-radius: 999px;
+        background: var(--skill-pill-bg);
+        border: 1px solid var(--skill-pill-border);
+        box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+        font-size: 13px;
+        font-weight: 500;
+        color: var(--skill-pill-color);
+        letter-spacing: -0.01em;
+        transition: background 0.18s ease, box-shadow 0.18s ease, color 0.4s ease, border-color 0.4s ease;
+      }
+
+      .skill-pill:hover {
+        background: var(--highlight-bg);
+        box-shadow: 0 3px 10px rgba(0,0,0,0.08);
+      }
+
+      /* ── WORK HISTORY ── */
+      .work-history {
+        padding: 0 var(--section-space) 80px;
+      }
+
+      .work-history-inner {
+        max-width: var(--max);
+        margin: 0 auto;
+      }
+
+      .work-history-header {
+        text-align: center;
+        margin-bottom: 32px;
+      }
+
+      .work-history-badge {
+        display: inline-flex;
+        align-items: center;
+        gap: 6px;
+        padding: 6px 14px;
+        border-radius: 999px;
+        background: var(--highlight-bg);
+        border: 1px solid var(--highlight-border);
+        box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+        font-size: 12px;
+        font-weight: 600;
+        color: var(--work-badge-color);
+        backdrop-filter: blur(8px);
+        margin-bottom: 16px;
+        transition: background 0.4s ease, color 0.4s ease, border-color 0.4s ease;
+      }
+
+      .work-history-header h2 {
+        margin: 0 0 10px;
+        font-size: clamp(28px, 3.5vw, 42px);
+        font-weight: 800;
+        letter-spacing: -1.2px;
+        color: var(--heading-color);
+        transition: color 0.4s ease;
+      }
+
+      .work-history-header p {
+        margin: 0;
+        font-size: 16px;
+        color: var(--muted-text);
+        line-height: 1.6;
+        transition: color 0.4s ease;
+      }
+
+      .work-history-sub {
+        text-align: center;
+        font-size: 18px;
+        font-weight: 700;
+        color: var(--heading-color);
+        letter-spacing: -0.4px;
+        margin: 36px 0 20px;
+        transition: color 0.4s ease;
+      }
+
+      .work-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 16px;
+      }
+
+      .work-card {
+        background: var(--work-card-bg);
+        border: 1px solid var(--work-card-border);
+        border-radius: 18px;
+        padding: 24px 26px 26px;
+        box-shadow: 0 1px 3px rgba(0,0,0,0.04), 0 4px 16px rgba(0,0,0,0.05);
+        transition: box-shadow 0.22s ease, transform 0.22s ease, background 0.4s ease, border-color 0.4s ease;
+      }
+
+      .work-card:hover {
+        box-shadow: 0 4px 12px rgba(0,0,0,0.07), 0 12px 32px rgba(0,0,0,0.08);
+        transform: translateY(-2px);
+      }
+
+      .work-card-top {
+        display: flex;
+        align-items: center;
+        gap: 14px;
+        margin-bottom: 18px;
+      }
+
+      .work-logo {
+        width: 48px;
+        height: 48px;
+        border-radius: 12px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-shrink: 0;
+        font-size: 22px;
+        font-weight: 800;
+        color: #fff;
+        letter-spacing: -1px;
+      }
+
+      .work-logo.salesforce { background: #00A1E0; }
+      .work-logo.hubspot    { background: #FF7A59; }
+      .work-logo.shopify    { background: #96BF48; }
+      .work-logo.wpp        { background: #1c2030; }
+
+      .work-logo svg {
+        width: 26px;
+        height: 26px;
+        fill: #fff;
+      }
+
+      .work-meta strong {
+        display: block;
+        font-size: 16px;
+        font-weight: 700;
+        color: var(--work-meta-strong);
+        letter-spacing: -0.3px;
+        line-height: 1.2;
+        transition: color 0.4s ease;
+      }
+
+      .work-meta span {
+        display: block;
+        font-size: 13px;
+        color: var(--work-meta-span);
+        margin-top: 2px;
+        transition: color 0.4s ease;
+      }
+
+      .work-meta .work-dates {
+        font-size: 12px;
+        color: var(--subtle-color);
+        margin-top: 1px;
+        transition: color 0.4s ease;
+      }
+
+      .work-bullets {
+        margin: 0;
+        padding: 0;
+        list-style: none;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        border-top: 1px solid var(--list-border);
+        padding-top: 16px;
+        transition: border-color 0.4s ease;
+      }
+
+      .work-bullets li {
+        display: flex;
+        gap: 10px;
+        font-size: 13.5px;
+        line-height: 1.65;
+        color: var(--work-bullet-color);
+        transition: color 0.4s ease;
+      }
+
+      .work-bullets li::before {
+        content: "•";
+        color: var(--work-bullet-dot);
+        flex-shrink: 0;
+        font-size: 14px;
+        line-height: 1.65;
+        transition: color 0.4s ease;
+      }
+
+      @media (max-width: 980px) {
+        .work-grid {
+          grid-template-columns: 1fr;
+        }
+      }
+      .cta-strip {
+        padding: 0 var(--section-space) 100px;
+      }
+
+      .cta-strip-inner {
+        max-width: var(--max);
+        margin: 0 auto;
+        background: #111318;
+        border-radius: 20px;
+        padding: 52px 56px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 32px;
+      }
+
+      .cta-strip-text h3 {
+        margin: 0 0 8px;
+        font-size: 26px;
+        font-weight: 700;
+        color: #ffffff;
+        letter-spacing: -0.6px;
+      }
+
+      .cta-strip-text p {
+        margin: 0;
+        font-size: 15px;
+        color: rgba(255,255,255,0.6);
+        line-height: 1.6;
+      }
+
+      .cta-strip-btn {
+        display: inline-block;
+        padding: 14px 28px;
+        border-radius: 999px;
+        background: #ffffff;
+        color: #111318;
+        text-decoration: none;
+        font-size: 14px;
+        font-weight: 700;
+        white-space: nowrap;
+        flex-shrink: 0;
+        transition: transform 0.2s ease, box-shadow 0.2s ease;
+      }
+
+      .cta-strip-btn:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 10px 24px rgba(0,0,0,0.2);
+      }
+
+      /* ── RESPONSIVE ── */
+      @media (max-width: 980px) {
+        body {
+          --nav-height: 72px;
+          --section-space: calc(var(--side-space) + 22px);
+        }
+
+        .menu { display: none; }
+        .nav-profile-text span { display: none; }
+
+        .hero {
+          padding: 0 var(--section-space) 0;
+          gap: 36px;
+          min-height: 100svh;
+        }
+
+        .hero-sub { font-size: 15px; }
+
+        .stats-inner { grid-template-columns: repeat(2, 1fr); margin-bottom: 32px; }
+        .stat-cell:nth-child(2) { border-right: none; }
+        .stat-cell:nth-child(3) { border-top: 1px solid rgba(0,0,0,0.08); }
+        .stat-cell:nth-child(4) { border-top: 1px solid rgba(0,0,0,0.08); border-right: none; }
+
+        .ab-list-label {
+          min-width: 0;
+          padding-right: 0;
+          margin-bottom: 4px;
+        }
+
+        .ab-list li {
+          flex-direction: column;
+          gap: 4px;
+        }
+
+        .ab-highlight {
+          grid-template-columns: 1fr 1fr;
+        }
+
+        .cta-strip-inner {
+          flex-direction: column;
+          text-align: center;
+          padding: 40px 32px;
+        }
+      }
+      /* ── FOOTER ── */
+      .site-footer { position: relative; background: #111318; overflow: hidden; min-height: 100svh; display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 0 var(--section-space); text-align: center; background-image: radial-gradient(ellipse 80% 50% at 50% 100%, rgba(79,150,232,0.07) 0%, transparent 70%); }
+      .footer-avail { display: inline-flex; align-items: center; gap: 10px; padding: 10px 22px; border-radius: 999px; background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.12); color: rgba(255,255,255,0.8); font-size: 13px; font-weight: 600; letter-spacing: 0.01em; margin-bottom: 36px; backdrop-filter: blur(8px); }
+      .footer-avail-dot { position: relative; width: 8px; height: 8px; border-radius: 50%; background: #22c55e; flex-shrink: 0; }
+      .footer-avail-dot::before, .footer-avail-dot::after { content: ""; position: absolute; inset: 0; border-radius: 50%; background: #22c55e; animation: ripple 2s ease-out infinite; }
+      .footer-avail-dot::after { animation-delay: 0.75s; }
+      @keyframes ripple { 0% { transform: scale(1); opacity: 0.6; } 100% { transform: scale(3.4); opacity: 0; } }
+      .footer-chip, .footer-deco { display: none; }
+      .footer-body { position: relative; z-index: 2; display: flex; flex-direction: column; align-items: center; gap: 0; }
+      .footer-heading { margin: 0 0 20px; font-size: clamp(44px,7vw,88px); font-weight: 800; letter-spacing: -2.5px; line-height: 1.04; color: #fff; }
+      .footer-sub { margin: 0 0 36px; font-size: 16px; color: rgba(255,255,255,0.45); line-height: 1.65; max-width: 400px; }
+      .footer-cta { display: inline-flex; align-items: center; gap: 8px; padding: 15px 36px; border-radius: 999px; background: #fff; color: #111318; text-decoration: none; font-size: 15px; font-weight: 700; letter-spacing: -0.2px; box-shadow: 0 8px 32px rgba(0,0,0,0.35); transition: transform 0.22s ease, box-shadow 0.22s ease; }
+      .footer-cta:hover { transform: translateY(-3px); box-shadow: 0 18px 48px rgba(0,0,0,0.45); }
+      .footer-bar { position: absolute; bottom: 0; left: 0; right: 0; z-index: 2; padding: 20px var(--section-space); border-top: 1px solid rgba(255,255,255,0.07); display: flex; align-items: center; justify-content: space-between; gap: 16px; }
+      .footer-bar-left { font-size: 13px; color: rgba(255,255,255,0.3); font-weight: 500; }
+      .footer-bar-links { display: flex; gap: 24px; }
+      .footer-bar-links a { font-size: 13px; color: rgba(255,255,255,0.3); text-decoration: none; font-weight: 500; transition: color 0.2s ease; }
+      .footer-bar-links a:hover { color: rgba(255,255,255,0.8); }
+    </style>
+  </head>
+  <body>
+
+    <!-- ── NAVBAR ── -->
+    <canvas id="theme-canvas"></canvas>
+    <header class="navbar">
+      <a href="index.html" style="text-decoration: none; color: inherit;">
+        <div class="nav-profile">
+          <div class="nav-profile-avatar"></div>
+          <div class="nav-profile-text">
+            <strong>Mohammed Fazil Arfath</strong>
+            <span>Based in Bangalore</span>
+          </div>
+        </div>
+      </a>
+      <nav class="menu">
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="testimonials.html">Testimonials</a>
+        <a href="index.html#contact">Contact me</a>
+      </nav>
+      <div class="nav-right">
+        <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode" title="Toggle dark/light mode">
+          <div class="theme-toggle-thumb"></div>
+          <div class="theme-toggle-track">
+            <span class="theme-toggle-icon">☀️</span>
+            <span class="theme-toggle-icon">🌙</span>
+          </div>
+        </button>
+        <button class="connect-btn">Let's connect</button>
+      </div>
+    </header>
+
+    <!-- ── HERO + STATS (one full-screen section) ── -->
+    <section class="hero">
+      <div class="hero-text">
+        <h1>Building marketing systems<br>that drive real results.</h1>
+        <p class="hero-sub">A results-driven digital marketing professional with experience in performance marketing, SEO, and campaign management across B2B SaaS and technology companies.</p>
+      </div>
+
+      <div class="stats-inner" id="statsRow">
+        <div class="stat-cell">
+          <strong data-prefix="" data-target="8" data-suffix="+">0</strong>
+          <span>Years experience</span>
+        </div>
+        <div class="stat-cell">
+          <strong data-prefix="$" data-target="4" data-suffix="M+">$0</strong>
+          <span>Ad spend managed</span>
+        </div>
+        <div class="stat-cell">
+          <strong data-prefix="" data-target="60" data-suffix="+">0</strong>
+          <span>Campaigns launched</span>
+        </div>
+        <div class="stat-cell">
+          <strong data-prefix="" data-target="3.4" data-suffix="×" data-decimal="1">0</strong>
+          <span>Avg ROAS improvement</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── ABOUT SECTION (from home page) ── -->
+    <section class="about">
+      <div class="about-pill">About</div>
+      <div class="about-grid">
+        <div class="about-copy">
+          <div class="about-text">
+            <h2>Hi, I am Fazil Arfath</h2>
+            <p>
+              A Sr. Digital Marketing Specialist with hands-on experience in
+              performance marketing, SEO, and campaign management across B2B SaaS
+              and technology companies in India.
+            </p>
+            <p>
+              I plan and execute data-driven strategies to improve online visibility,
+              generate quality leads, and deliver measurable growth through
+              optimised campaigns and continuous analysis.
+            </p>
+            <ul class="about-highlights">
+              <li>Managed Google Ads campaigns leading to increased conversions.</li>
+              <li>Improved website traffic through targeted SEO strategies.</li>
+              <li>Executed performance marketing campaigns with measurable ROI.</li>
+            </ul>
+          </div>
+          <div class="about-stats">
+            <article class="about-card">
+              <strong>8+ years</strong>
+              <span>Digital marketing</span>
+            </article>
+            <article class="about-card">
+              <strong>60+</strong>
+              <span>Campaigns launched</span>
+            </article>
+          </div>
+        </div>
+        <div class="about-image" aria-label="Portrait of Mohammed Fazil Arfath"></div>
+      </div>
+    </section>
+
+    <!-- ── EDITORIAL BODY ── -->
+    <section class="about-body">
+      <div class="about-body-inner">
+
+        <!-- 02 What I specialise in -->
+        <div class="ab-block">
+          <div class="ab-head">
+            <span class="ab-pill">What I specialise in</span>
+          </div>
+          <div class="ab-content">
+            <ul class="ab-list">
+              <li>
+                <span class="ab-list-label">Google Ads Management</span>
+                <span class="ab-list-desc">Campaign setup, keyword research, bid strategy, and continuous optimisation to improve lead quality and reduce cost-per-acquisition.</span>
+              </li>
+              <li>
+                <span class="ab-list-label">SEO &amp; Content Strategy</span>
+                <span class="ab-list-desc">Technical SEO audits, keyword research, on-page optimisation, and content planning to drive organic traffic growth.</span>
+              </li>
+              <li>
+                <span class="ab-list-label">Performance Marketing</span>
+                <span class="ab-list-desc">Meta Ads, campaign planning, audience targeting, creative testing, and ROI-focused optimisation across digital channels.</span>
+              </li>
+              <li>
+                <span class="ab-list-label">Analytics &amp; Reporting</span>
+                <span class="ab-list-desc">Google Analytics setup, conversion tracking, performance dashboards, and data-driven insights for campaign improvement.</span>
+              </li>
+              <li>
+                <span class="ab-list-label">Conversion Optimisation</span>
+                <span class="ab-list-desc">Landing page analysis, A/B testing, funnel optimisation, and user experience improvements to increase conversion rates.</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- 03 Skills -->
+        <div class="ab-block">
+          <div class="ab-head">
+            <span class="ab-pill">Tools &amp; skills</span>
+          </div>
+          <div class="ab-content">
+            <div class="skill-pills">
+              <span class="skill-pill">Google Ads</span>
+              <span class="skill-pill">Meta Ads</span>
+              <span class="skill-pill">Google Ads Certification</span>
+              <span class="skill-pill">SEO</span>
+              <span class="skill-pill">GA4</span>
+              <span class="skill-pill">HubSpot</span>
+              <span class="skill-pill">Looker Studio</span>
+              <span class="skill-pill">A/B Testing</span>
+              <span class="skill-pill">Attribution Modelling</span>
+              <span class="skill-pill">CRO</span>
+              <span class="skill-pill">Email Automation</span>
+              <span class="skill-pill">Content Strategy</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ── WORK HISTORY ── -->
+    <section class="work-history">
+      <div class="work-history-inner">
+
+        <div class="work-history-header">
+          <div class="work-history-badge">Experience</div>
+          <h2>My Marketing Journey</h2>
+          <p>The roles, teams, and campaigns that shaped my expertise.</p>
+        </div>
+
+        <p class="work-history-sub">Work History</p>
+
+        <div class="work-grid">
+
+          <!-- Salesforce -->
+          <div class="work-card">
+            <div class="work-card-top">
+              <div class="work-logo salesforce">
+                <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M10.07 4.5a4.95 4.95 0 0 1 3.54 1.47 6.44 6.44 0 0 1 2.13-.36 6.5 6.5 0 0 1 6.26 8.3A4.5 4.5 0 0 1 19.5 21H6a4 4 0 0 1-.68-7.94A5.5 5.5 0 0 1 10.07 4.5z"/></svg>
+              </div>
+              <div class="work-meta">
+                <strong>Salesforce</strong>
+                <span>Sr. Digital Marketing Specialist</span>
+                <span class="work-dates">2022 – Present</span>
+              </div>
+            </div>
+            <ul class="work-bullets">
+              <li>Led paid search and paid social strategy across Google, Meta, and LinkedIn for a portfolio of SaaS clients.</li>
+              <li>Delivered an average 3.4× ROAS improvement within 6 months through campaign restructuring and audience segmentation.</li>
+              <li>Owned monthly reporting dashboards connecting ad spend directly to pipeline and revenue.</li>
+            </ul>
+          </div>
+
+          <!-- HubSpot -->
+          <div class="work-card">
+            <div class="work-card-top">
+              <div class="work-logo hubspot">
+                <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M16.5 8.25V6a2.25 2.25 0 1 0-2.25 2.25h.75v2.19a6.75 6.75 0 1 0 3.75 6.06 6.71 6.71 0 0 0-2.25-5.02V8.25h-2.25v2.44A4.5 4.5 0 1 1 12 9.75a4.46 4.46 0 0 1 2.25.61V8.25z"/></svg>
+              </div>
+              <div class="work-meta">
+                <strong>HubSpot</strong>
+                <span>Digital Marketing Manager</span>
+                <span class="work-dates">2020 – 2022</span>
+              </div>
+            </div>
+            <ul class="work-bullets">
+              <li>Owned SEO and content strategy that grew organic traffic by 210% in 18 months.</li>
+              <li>Built HubSpot nurture sequences that reduced sales cycle length by 22% and improved MQL-to-SQL conversion.</li>
+              <li>Managed a team of 3 content specialists and coordinated with product marketing on launch campaigns.</li>
+            </ul>
+          </div>
+
+          <!-- Shopify -->
+          <div class="work-card">
+            <div class="work-card-top">
+              <div class="work-logo shopify">
+                <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M15.34 3.5c-.07 0-.14.05-.2.1-.5.3-1 .45-1.5.5-.3-1-.9-1.9-1.9-1.9h-.1c-.3-.4-.6-.6-1-.6-2.4 0-3.5 3-3.9 4.5l-2.6.8c-.8.25-1.04.5-1.14 1.3L2 18.5l11.5 2 6-1.5-1.5-14.5c-.1-.5-.4-.5-.66-.5zm-2.84.5c-.7.05-1.4.25-2 .6.3-1.1.9-2.1 1.7-2.1.3.7.4 1.1.3 1.5zm-1.5 1c-.8.5-1.5 1.3-1.9 2.3l-2.5.75c.5-1.8 1.5-3.55 3.1-3.55.5 0 .9.2 1.3.5zm1 9.5c0 1.1-.9 2-2 2s-2-.9-2-2 .9-2 2-2 2 .9 2 2z"/></svg>
+              </div>
+              <div class="work-meta">
+                <strong>Shopify</strong>
+                <span>Performance Marketing Specialist</span>
+                <span class="work-dates">2018 – 2020</span>
+              </div>
+            </div>
+            <ul class="work-bullets">
+              <li>Managed Google Shopping and Meta Dynamic Ads for a high-volume e-commerce brand.</li>
+              <li>Scaled monthly revenue from $280K to $1.1M while maintaining a sub-$12 CPA.</li>
+              <li>Built continuous creative testing frameworks that reduced cost-per-acquisition by 38%.</li>
+            </ul>
+          </div>
+
+          <!-- WPP -->
+          <div class="work-card">
+            <div class="work-card-top">
+              <div class="work-logo wpp">
+                <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/></svg>
+              </div>
+              <div class="work-meta">
+                <strong>WPP Group</strong>
+                <span>Marketing Coordinator</span>
+                <span class="work-dates">2016 – 2018</span>
+              </div>
+            </div>
+            <ul class="work-bullets">
+              <li>Supported senior strategists with campaign setup, UTM tracking, and weekly analytics reporting.</li>
+              <li>Coordinated A/B test schedules across 6 client accounts and documented results for optimisation reviews.</li>
+              <li>Built strong foundations in attribution modelling, funnel analysis, and cross-channel reporting.</li>
+            </ul>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ── CTA STRIP ── -->
+    <div class="cta-strip">
+      <div class="cta-strip-inner">
+        <div class="cta-strip-text">
+          <h3>Ready to scale your marketing?</h3>
+          <p>Let's talk about your growth goals and how I can help you hit them.</p>
+        </div>
+        <a href="contact.html" class="cta-strip-btn">Get in touch →</a>
+      </div>
+    </div>
+
+    <script>
+      // ── Theme toggle ──
+      (function() {
+        const html = document.documentElement;
+        function initCanvas() {
+          const canvas = document.getElementById('theme-canvas');
+          if (!canvas) return;
+          const ctx = canvas.getContext('2d');
+          let W, H, orbs, raf;
+          function resize() { W = canvas.width = window.innerWidth; H = canvas.height = window.innerHeight; }
+          function makeOrbs() {
+            return [
+              { x: W*0.2, y: H*0.2, r: Math.min(W,H)*0.38, vx: 0.12, vy: 0.08, color: 'rgba(0,180,140,0.13)' },
+              { x: W*0.8, y: H*0.7, r: Math.min(W,H)*0.32, vx: -0.09, vy: 0.11, color: 'rgba(79,150,232,0.10)' },
+              { x: W*0.5, y: H*0.9, r: Math.min(W,H)*0.28, vx: 0.07, vy: -0.13, color: 'rgba(0,200,160,0.08)' },
+            ];
+          }
+          function draw() {
+            ctx.clearRect(0,0,W,H);
+            orbs.forEach(o => {
+              o.x += o.vx; o.y += o.vy;
+              if (o.x < -o.r || o.x > W+o.r) o.vx *= -1;
+              if (o.y < -o.r || o.y > H+o.r) o.vy *= -1;
+              const g = ctx.createRadialGradient(o.x,o.y,0,o.x,o.y,o.r);
+              g.addColorStop(0, o.color); g.addColorStop(1, 'transparent');
+              ctx.beginPath(); ctx.arc(o.x,o.y,o.r,0,Math.PI*2);
+              ctx.fillStyle = g; ctx.fill();
+            });
+            raf = requestAnimationFrame(draw);
+          }
+          function start() { resize(); orbs = makeOrbs(); if(raf) cancelAnimationFrame(raf); draw(); }
+          function stop() { if(raf){cancelAnimationFrame(raf);raf=null;} ctx.clearRect(0,0,W,H); }
+          window.addEventListener('resize', () => { resize(); orbs = makeOrbs(); });
+          const obs = new MutationObserver(() => {
+            if (html.getAttribute('data-theme') === 'dark') start(); else stop();
+          });
+          obs.observe(html, { attributes: true, attributeFilter: ['data-theme'] });
+          if (html.getAttribute('data-theme') === 'dark') start();
+        }
+        document.addEventListener('DOMContentLoaded', () => {
+          initCanvas();
+          const btn = document.getElementById('themeToggle');
+          if (btn) {
+            btn.addEventListener('click', () => {
+              const isDark = html.getAttribute('data-theme') === 'dark';
+              if (isDark) { html.removeAttribute('data-theme'); localStorage.setItem('theme','light'); }
+              else { html.setAttribute('data-theme','dark'); localStorage.setItem('theme','dark'); }
+            });
+          }
+        });
+      })();
+
+      (function () {
+        const row = document.getElementById("statsRow");
+        if (!row) return;
+
+        const DURATION = 1600; // ms
+        const EASE = t => t < 0.5 ? 2*t*t : -1+(4-2*t)*t; // ease-in-out quad
+
+        function animateStat(el) {
+          const target  = parseFloat(el.dataset.target);
+          const prefix  = el.dataset.prefix  || "";
+          const suffix  = el.dataset.suffix  || "";
+          const decimal = parseInt(el.dataset.decimal || "0");
+          const start   = performance.now();
+
+          function tick(now) {
+            const elapsed  = now - start;
+            const progress = Math.min(elapsed / DURATION, 1);
+            const eased    = EASE(progress);
+            const value    = eased * target;
+            el.textContent = prefix + value.toFixed(decimal) + suffix;
+            if (progress < 1) requestAnimationFrame(tick);
+          }
+
+          requestAnimationFrame(tick);
+        }
+
+        function runAll() {
+          row.querySelectorAll("strong[data-target]").forEach(animateStat);
+        }
+
+        // Fires every time the row enters the viewport
+        const observer = new IntersectionObserver(
+          (entries) => {
+            entries.forEach(entry => {
+              if (entry.isIntersecting) runAll();
+            });
+          },
+          { threshold: 0.3 }
+        );
+
+        observer.observe(row);
+      })();
+    </script>
+    <!-- ══ FOOTER ══ -->
+    <footer class="site-footer">
+      <div class="footer-body">
+        <div class="footer-avail">
+          <span class="footer-avail-dot"></span>
+          Available for new projects
+        </div>
+        <h2 class="footer-heading">Let's grow<br>your brand.</h2>
+        <p class="footer-sub">I'm not just here to run campaigns —<br>I'm here to build systems that scale.</p>
+        <a href="contact.html" class="footer-cta">Let's talk!</a>
+      </div>
+      <div class="footer-bar">
+        <span class="footer-bar-left">© 2025 Mohammed Fazil Arfath · Sr. Digital Marketing Specialist</span>
+        <nav class="footer-bar-links">
+          <a href="index.html">Home</a>
+          <a href="about.html">About</a>
+          <a href="testimonials.html">Testimonials</a>
+          <a href="contact.html">Contact</a>
+        </nav>
+      </div>
+    </footer>
+
+  </body>
+</html>

@@ -1,0 +1,685 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <script>try{if(localStorage.getItem('theme')==='dark')document.documentElement.setAttribute('data-theme','dark')}catch(e){}</script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Testimonials — Mohammed Fazil Arfath, Sr. Digital Marketing Specialist</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+    <style>
+      :root {
+        --side-space: clamp(20px, 4vw, 42px);
+        --nav-height: 78px;
+        --section-space: calc(var(--side-space) + 68px);
+        --nav-bg: rgba(241,242,246,0.88);
+        --nav-border: rgba(32,34,48,0.06);
+        --nav-text: #1f2230;
+        --nav-muted: #666e7d;
+        --menu-bg: #f7f7fb;
+        --menu-color: #4a4f5d;
+        --btn-bg: #f7f7fb;
+        --btn-color: #202432;
+        --page-bg: radial-gradient(ellipse 160% 60% at 50% 0%, #f7f8fb 0%, #ececf0 60%);
+        --page-color: #1f2230;
+        --section-text: #111318;
+        --muted-text: #6b7280;
+        --card-bg: #ffffff;
+        --card-border: rgba(0,0,0,0.06);
+        --testi-quote: #3a4055;
+        --testi-name: #111318;
+        --testi-role: #7a8090;
+        --testi-author-border: rgba(0,0,0,0.06);
+        --testi-dot: rgba(0,0,0,0.15);
+        --testi-dot-active: #1c2030;
+        --testi-arrow-bg: #ffffff;
+        --testi-arrow-border: rgba(0,0,0,0.12);
+        --testi-arrow-color: #1c2030;
+        --hero-badge-bg: rgba(255,255,255,0.95);
+        --hero-badge-border: rgba(0,0,0,0.06);
+        --hero-badge-color: #3a3f50;
+        --hero-h1: #000000;
+        --hero-sub: #6b7280;
+      }
+
+      [data-theme="dark"] {
+        --nav-bg: rgba(14,17,20,0.92);
+        --nav-border: rgba(255,255,255,0.07);
+        --nav-text: #e8eaf0;
+        --nav-muted: #a0a8b8;
+        --menu-bg: rgba(255,255,255,0.06);
+        --menu-color: rgba(255,255,255,0.85);
+        --btn-bg: rgba(255,255,255,0.08);
+        --btn-color: #e8eaf0;
+        --page-bg: #0b0e10;
+        --page-color: #e8eaf0;
+        --section-text: #f0f2f8;
+        --muted-text: rgba(255,255,255,0.65);
+        --card-bg: rgba(255,255,255,0.05);
+        --card-border: rgba(255,255,255,0.08);
+        --testi-quote: rgba(255,255,255,0.8);
+        --testi-name: #f0f2f8;
+        --testi-role: rgba(255,255,255,0.55);
+        --testi-author-border: rgba(255,255,255,0.08);
+        --testi-dot: rgba(255,255,255,0.15);
+        --testi-dot-active: #fff;
+        --testi-arrow-bg: rgba(255,255,255,0.07);
+        --testi-arrow-border: rgba(255,255,255,0.12);
+        --testi-arrow-color: #e0e4f0;
+        --hero-badge-bg: rgba(255,255,255,0.07);
+        --hero-badge-border: rgba(255,255,255,0.12);
+        --hero-badge-color: rgba(255,255,255,0.85);
+        --hero-h1: #ffffff;
+        --hero-sub: rgba(255,255,255,0.7);
+      }
+
+      * { box-sizing: border-box; }
+      html { scroll-behavior: smooth; transition: background 0.4s ease, color 0.4s ease; }
+
+      body { margin: 0; font-family: "Inter", sans-serif; background: var(--page-bg); color: var(--page-color); padding-top: var(--nav-height); -webkit-font-smoothing: antialiased; transition: background 0.4s ease, color 0.4s ease; }
+      [data-theme="dark"] body { background: #0b0e10; }
+
+      #theme-canvas { display: none; position: fixed; inset: 0; z-index: 0; pointer-events: none; }
+      [data-theme="dark"] #theme-canvas { display: block; }
+
+      /* NAVBAR */
+      .navbar { position: fixed; top: 0; left: 0; width: 100%; min-height: var(--nav-height); padding: 14px var(--side-space); z-index: 100; display: grid; grid-template-columns: 1fr auto 1fr; align-items: center; background: var(--nav-bg); backdrop-filter: blur(10px); border-bottom: 1px solid var(--nav-border); transition: background 0.4s ease, border-color 0.4s ease; }
+      .nav-profile { display: flex; align-items: center; gap: 10px; justify-self: start; }
+      .nav-profile-avatar { width: 40px; height: 40px; border-radius: 50%; background: url("assets/img.png") center/cover no-repeat; box-shadow: 0 8px 20px rgba(31,34,48,0.2); }
+      .nav-profile-text strong { display: block; font-size: 18px; font-weight: 600; line-height: 1.1; color: var(--nav-text); transition: color 0.4s ease; }
+      .nav-profile-text span { color: var(--nav-muted); font-size: 14px; transition: color 0.4s ease; }
+      .nav-right { display: flex; align-items: center; gap: 10px; justify-self: end; }
+      .menu { display: flex; gap: 24px; background: var(--menu-bg); padding: 12px 22px; border-radius: 999px; box-shadow: 0 10px 30px rgba(32,33,45,0.07); font-size: 14px; color: var(--menu-color); justify-self: center; transition: background 0.4s ease, color 0.4s ease; }
+      .menu a { color: inherit; text-decoration: none; transition: opacity 0.2s ease; }
+      .menu a:hover, .menu a.active { opacity: 0.7; font-weight: 600; }
+      .connect-btn { border: 0; color: #ffffff !important; background: #1a1a1a; border-radius: 999px; padding: 12px 22px; font-weight: 600; cursor: pointer; font-family: "Inter", sans-serif; font-size: 14px; box-shadow: 0 10px 26px rgba(36,36,50,0.1); transition: background 0.2s ease, opacity 0.2s ease; }
+      [data-theme="dark"] .connect-btn { background: #ffffff; color: #0b0e10 !important; }
+      .connect-btn:hover { opacity: 0.8; }
+
+      /* Theme Toggle */
+      .theme-toggle { display: inline-flex; align-items: center; padding: 4px; border-radius: 999px; background: var(--menu-bg); border: 1px solid var(--nav-border); cursor: pointer; box-shadow: 0 2px 8px rgba(0,0,0,0.08); transition: background 0.4s ease, border-color 0.4s ease; position: relative; width: 64px; height: 32px; flex-shrink: 0; }
+      .theme-toggle-track { position: absolute; inset: 4px; border-radius: 999px; display: flex; align-items: center; justify-content: space-between; padding: 0 4px; }
+      .theme-toggle-icon { width: 20px; height: 20px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 11px; flex-shrink: 0; z-index: 1; }
+      .theme-toggle-thumb { position: absolute; top: 4px; width: 24px; height: 24px; border-radius: 50%; background: #fff; box-shadow: 0 2px 6px rgba(0,0,0,0.2); transition: left 0.3s cubic-bezier(0.4,0,0.2,1), background 0.3s ease; left: 4px; }
+      [data-theme="dark"] .theme-toggle-thumb { left: calc(100% - 28px); background: #1c2030; }
+      [data-theme="dark"] .theme-toggle { background: rgba(255,255,255,0.08); border-color: rgba(255,255,255,0.12); }
+
+      /* HERO */
+      .hero { 
+        position: relative;
+        padding: 0 var(--section-space); 
+        text-align: center; 
+        overflow: hidden;
+        height: calc(100vh - var(--nav-height));
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      
+      /* Hero Content */
+      .hero-content {
+        position: relative;
+        z-index: 10;
+        max-width: 700px;
+        margin: 0 auto;
+      }
+      
+      .hero h1 { 
+        margin: 0 auto 24px; 
+        font-size: clamp(44px,6.5vw,72px); 
+        line-height: 1.15; 
+        font-weight: 800; 
+        max-width: 750px; 
+        letter-spacing: -2.2px; 
+        color: var(--hero-h1);
+        transition: color 0.4s ease;
+      }
+      
+      .hero h1 .gray-text {
+        color: var(--muted-text);
+        display: block;
+        transition: color 0.4s ease;
+      }
+      
+      .hero-sub { 
+        margin: 0 auto 40px; 
+        max-width: 600px; 
+        font-size: 16px; 
+        line-height: 1.7; 
+        color: var(--muted-text);
+        transition: color 0.4s ease;
+      }
+      
+      .hero-cta {
+        display: inline-flex;
+        align-items: center;
+        gap: 10px;
+        padding: 14px 32px;
+        border-radius: 999px;
+        background: #1a1a1a;
+        color: #ffffff !important;
+        text-decoration: none;
+        font-size: 14px;
+        font-weight: 700;
+        box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+        transition: transform 0.2s ease, box-shadow 0.2s ease;
+        cursor: pointer;
+      }
+      
+      [data-theme="dark"] .hero-cta {
+        background: #ffffff;
+        color: #0b0e10 !important;
+      }
+      
+      .hero-cta:hover {
+        transform: translateY(2px);
+        box-shadow: 0 12px 28px rgba(0,0,0,0.28);
+      }
+      
+      .hero-cta svg {
+        width: 18px;
+        height: 18px;
+        stroke: currentColor;
+        stroke-width: 2.5;
+        fill: none;
+        stroke-linecap: round;
+        stroke-linejoin: round;
+        animation: bounce 2s ease-in-out infinite;
+      }
+      
+      @keyframes bounce {
+        0%, 100% { transform: translateY(0); }
+        50% { transform: translateY(4px); }
+      }
+
+      /* STATS */
+      .stats-row { padding: 0 var(--section-space) 60px; }
+      .stats-inner { max-width: 900px; margin: 0 auto; display: grid; grid-template-columns: repeat(4,1fr); border-top: 1px solid var(--testi-author-border); border-bottom: 1px solid var(--testi-author-border); }
+      .stat-cell { padding: 28px 20px; border-right: 1px solid var(--testi-author-border); text-align: center; }
+      .stat-cell:last-child { border-right: none; }
+      .stat-cell strong { display: block; font-size: clamp(26px,3vw,38px); font-weight: 800; letter-spacing: -1.2px; color: var(--section-text); line-height: 1; margin-bottom: 6px; transition: color 0.4s ease; }
+      .stat-cell span { font-size: 13px; color: var(--muted-text); font-weight: 500; transition: color 0.4s ease; }
+
+      /* FILTERS */
+      .filters { display: flex; flex-wrap: wrap; justify-content: center; gap: 8px; padding: 0 var(--section-space) 44px; }
+      .filter-btn { padding: 9px 20px; border-radius: 999px; border: 1px solid var(--card-border); background: var(--card-bg); color: var(--muted-text); font-size: 13px; font-weight: 600; cursor: pointer; transition: background 0.2s ease, color 0.2s ease, box-shadow 0.2s ease; font-family: "Inter", sans-serif; }
+      .filter-btn:hover { background: var(--testi-arrow-bg); box-shadow: 0 2px 8px rgba(0,0,0,0.08); }
+      .filter-btn.is-active { background: var(--section-text); color: var(--page-bg); border-color: var(--section-text); box-shadow: 0 4px 14px rgba(17,19,24,0.2); }
+
+      /* GRID */
+      .testi-section { padding: 0 var(--section-space) 100px; }
+      .testi-grid { 
+        max-width: 1100px; 
+        margin: 0 auto; 
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+      }
+
+      /* CARD */
+      .testi-card { 
+        background: var(--card-bg); 
+        border-radius: 20px; 
+        padding: 26px 24px; 
+        border: 1px solid var(--card-border); 
+        box-shadow: 0 2px 6px rgba(0,0,0,0.04), 0 8px 24px rgba(0,0,0,0.05); 
+        display: flex; 
+        flex-direction: column; 
+        gap: 0; 
+        transition: box-shadow 0.22s ease, transform 0.22s ease, opacity 0.3s ease, background 0.4s ease, border-color 0.4s ease; 
+        opacity: 1;
+        max-height: 1000px;
+      }
+      .testi-card:hover { box-shadow: 0 4px 12px rgba(0,0,0,0.07), 0 16px 40px rgba(0,0,0,0.09); transform: translateY(-3px); }
+      .testi-card.is-hidden { display: none; }
+      .testi-card-top { display: flex; align-items: flex-start; justify-content: space-between; margin-bottom: 14px; }
+      .testi-stars { display: flex; gap: 3px; }
+      .testi-stars svg { width: 14px; height: 14px; fill: #f5a623; }
+      .testi-cat { font-size: 11px; font-weight: 600; padding: 4px 10px; border-radius: 999px; background: var(--card-border); color: var(--muted-text); white-space: nowrap; transition: background 0.4s ease, color 0.4s ease; }
+      .testi-quote { font-size: 15px; line-height: 1.72; color: var(--testi-quote); margin: 0 0 18px; flex: 1; transition: color 0.4s ease; }
+      .testi-author { display: flex; align-items: center; gap: 11px; padding-top: 16px; border-top: 1px solid var(--testi-author-border); transition: border-color 0.4s ease; }
+      .testi-avatar { width: 38px; height: 38px; border-radius: 50%; background-size: cover; background-position: center; flex-shrink: 0; }
+      .testi-name { font-size: 13.5px; font-weight: 700; color: var(--testi-name); line-height: 1.2; transition: color 0.4s ease; }
+      .testi-role { font-size: 12px; color: var(--testi-role); margin-top: 2px; transition: color 0.4s ease; }
+
+      /* FOOTER */
+      .site-footer { position: relative; background: #111318; overflow: hidden; min-height: 100svh; display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 0 var(--section-space); text-align: center; background-image: radial-gradient(ellipse 80% 50% at 50% 100%, rgba(79,150,232,0.07) 0%, transparent 70%); }
+      .footer-avail { display: inline-flex; align-items: center; gap: 10px; padding: 10px 22px; border-radius: 999px; background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.12); color: rgba(255,255,255,0.8); font-size: 13px; font-weight: 600; letter-spacing: 0.01em; margin-bottom: 36px; backdrop-filter: blur(8px); }
+      .footer-avail-dot { position: relative; width: 8px; height: 8px; border-radius: 50%; background: #22c55e; flex-shrink: 0; }
+      .footer-avail-dot::before, .footer-avail-dot::after { content: ""; position: absolute; inset: 0; border-radius: 50%; background: #22c55e; animation: ripple 2s ease-out infinite; }
+      .footer-avail-dot::after { animation-delay: 0.75s; }
+      @keyframes ripple { 0% { transform: scale(1); opacity: 0.6; } 100% { transform: scale(3.4); opacity: 0; } }
+      .footer-body { position: relative; z-index: 2; display: flex; flex-direction: column; align-items: center; gap: 0; }
+      .footer-heading { margin: 0 0 20px; font-size: clamp(44px,7vw,88px); font-weight: 800; letter-spacing: -2.5px; line-height: 1.04; color: #fff; }
+      .footer-sub { margin: 0 0 36px; font-size: 16px; color: rgba(255,255,255,0.45); line-height: 1.65; max-width: 400px; }
+      .footer-cta { display: inline-flex; align-items: center; gap: 8px; padding: 15px 36px; border-radius: 999px; background: #fff; color: #111318; text-decoration: none; font-size: 15px; font-weight: 700; letter-spacing: -0.2px; box-shadow: 0 8px 32px rgba(0,0,0,0.35); transition: transform 0.22s ease, box-shadow 0.22s ease; }
+      .footer-cta:hover { transform: translateY(-3px); box-shadow: 0 18px 48px rgba(0,0,0,0.45); }
+      .footer-bar { position: absolute; bottom: 0; left: 0; right: 0; z-index: 2; padding: 20px var(--section-space); border-top: 1px solid rgba(255,255,255,0.07); display: flex; align-items: center; justify-content: space-between; gap: 16px; }
+      .footer-bar-left { font-size: 13px; color: rgba(255,255,255,0.3); font-weight: 500; }
+      .footer-bar-links { display: flex; gap: 24px; }
+      .footer-bar-links a { font-size: 13px; color: rgba(255,255,255,0.3); text-decoration: none; font-weight: 500; transition: color 0.2s ease; }
+      .footer-bar-links a:hover { color: rgba(255,255,255,0.8); }
+
+      /* RESPONSIVE */
+      @media (max-width: 980px) {
+        body { --nav-height: 72px; --section-space: calc(var(--side-space) + 22px); }
+        .menu { display: none; }
+        .nav-profile-text span { display: none; }
+        .hero { height: calc(100vh - var(--nav-height)); }
+        .hero h1 { font-size: clamp(32px, 8vw, 48px); }
+        .stats-inner { grid-template-columns: repeat(2,1fr); }
+        .stat-cell:nth-child(2) { border-right: none; }
+        .stat-cell:nth-child(3) { border-top: 1px solid rgba(0,0,0,0.08); }
+        .stat-cell:nth-child(4) { border-top: 1px solid rgba(0,0,0,0.08); border-right: none; }
+        .testi-grid { grid-template-columns: 1fr; }
+        .footer-bar { position: relative; flex-direction: column; text-align: center; gap: 10px; margin-top: 60px; }
+      }
+    </style>
+  </head>
+  <body>
+
+    <!-- NAVBAR -->
+    <canvas id="theme-canvas"></canvas>
+    <header class="navbar">
+      <a href="index.html" style="text-decoration: none; color: inherit;">
+        <div class="nav-profile">
+          <div class="nav-profile-avatar"></div>
+          <div class="nav-profile-text">
+            <strong>Mohammed Fazil Arfath</strong>
+            <span>Sr. Digital Marketing Specialist</span>
+          </div>
+        </div>
+      </a>
+      <nav class="menu">
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="testimonials.html" class="active">Testimonials</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+      <div class="nav-right">
+        <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode" title="Toggle dark/light mode">
+          <div class="theme-toggle-thumb"></div>
+          <div class="theme-toggle-track">
+            <span class="theme-toggle-icon">☀️</span>
+            <span class="theme-toggle-icon">🌙</span>
+          </div>
+        </button>
+        <button class="connect-btn">Let's Connect</button>
+      </div>
+    </header>
+
+    <!-- HERO SECTION -->
+    <section class="hero">
+      <!-- Hero Content -->
+      <div class="hero-content">
+        <h1>Trusted by leaders<br><span class="gray-text">from various industries</span></h1>
+        <p class="hero-sub">Learn why professionals trust our solutions to complete their customer journeys.</p>
+        <a href="#stats" class="hero-cta">
+          View Testimonials
+          <svg viewBox="0 0 24 24">
+            <path d="M12 5v14M5 12l7 7 7-7"/>
+          </svg>
+        </a>
+      </div>
+    </section>
+
+    <!-- STATS -->
+    <section class="stats-row" id="stats">
+      <div class="stats-inner">
+        <div class="stat-cell">
+          <strong>500+</strong>
+          <span>Happy Clients</span>
+        </div>
+        <div class="stat-cell">
+          <strong>98%</strong>
+          <span>Satisfaction Rate</span>
+        </div>
+        <div class="stat-cell">
+          <strong>50+</strong>
+          <span>Industries Served</span>
+        </div>
+        <div class="stat-cell">
+          <strong>10+</strong>
+          <span>Years Experience</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- FILTERS -->
+    <section class="filters">
+      <button class="filter-btn is-active" data-filter="all">All</button>
+      <button class="filter-btn" data-filter="marketing">Marketing</button>
+      <button class="filter-btn" data-filter="tech">Technology</button>
+      <button class="filter-btn" data-filter="finance">Finance</button>
+      <button class="filter-btn" data-filter="healthcare">Healthcare</button>
+      <button class="filter-btn" data-filter="retail">Retail</button>
+    </section>
+
+    <!-- TESTIMONIALS GRID -->
+    <section class="testi-section" id="testimonials">
+      <div class="testi-grid">
+        
+        <!-- Card 1 -->
+        <div class="testi-card" data-category="marketing">
+          <div class="testi-card-top">
+            <div class="testi-stars">
+              <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+              <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+              <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+              <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+              <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            </div>
+            <span class="testi-cat">Marketing</span>
+          </div>
+          <p class="testi-quote">"Fazil transformed our digital presence completely. Our engagement rates improved significantly within the first quarter, and we've seen consistent growth ever since. Highly recommend!"</p>
+          <div class="testi-author">
+            <div class="testi-avatar" style="background-image: url('https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=400&q=80');"></div>
+            <div>
+              <div class="testi-name">Rajesh Kumar</div>
+              <div class="testi-role">CEO, TYASuite Software Solutions</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 2 -->
+        <div class="testi-card" data-category="tech">
+          <div class="testi-card-top">
+            <div class="testi-stars">
+              <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+              <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+              <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+              <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+              <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            </div>
+            <span class="testi-cat">Technology</span>
+          </div>
+          <p class="testi-quote">"Working with Fazil was a game-changer for our platform. The strategic approach to digital marketing helped us reach our target audience effectively and improve conversions."</p>
+          <div class="testi-author">
+            <div class="testi-avatar" style="background-image: url('https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=400&q=80');"></div>
+            <div>
+              <div class="testi-name">Arun Menon</div>
+              <div class="testi-role">VP Marketing, iTCart Pvt Ltd</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 3 -->
+        <div class="testi-card" data-category="finance">
+          <div class="testi-card-top">
+            <div class="testi-stars">
+              <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+              <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+              <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+              <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+              <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            </div>
+            <span class="testi-cat">Finance</span>
+          </div>
+          <p class="testi-quote">"The ROI we've seen from Fazil's campaigns is exceptional. Professional, data-driven, and always delivers beyond expectations. A true partner in growth."</p>
+          <div class="testi-author">
+            <div class="testi-avatar" style="background-image: url('https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=400&q=80');"></div>
+            <div>
+              <div class="testi-name">Priya Sharma</div>
+              <div class="testi-role">Head of Growth, Dataplatr</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 4 -->
+        <div class="testi-card" data-category="healthcare">
+          <div class="testi-card-top">
+            <div class="testi-stars">
+              <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+              <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+              <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+              <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+              <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            </div>
+            <span class="testi-cat">Healthcare</span>
+          </div>
+          <p class="testi-quote">"Fazil's SEO and content strategy helped us improve our search rankings significantly. Organic traffic is up consistently, and our brand visibility has never been stronger."</p>
+          <div class="testi-author">
+            <div class="testi-avatar" style="background-image: url('https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?auto=format&fit=crop&w=400&q=80');"></div>
+            <div>
+              <div class="testi-name">Vikram Reddy</div>
+              <div class="testi-role">COO, SaaS Growth Co.</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 5 -->
+        <div class="testi-card" data-category="retail">
+          <div class="testi-card-top">
+            <div class="testi-stars">
+              <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+              <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+              <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+              <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+              <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            </div>
+            <span class="testi-cat">Retail</span>
+          </div>
+          <p class="testi-quote">"Our platform performance improved significantly after implementing Fazil's digital marketing strategies. The attention to detail and data-driven approach made all the difference."</p>
+          <div class="testi-author">
+            <div class="testi-avatar" style="background-image: url('https://images.unsplash.com/photo-1580489944761-15a19d654956?auto=format&fit=crop&w=400&q=80');"></div>
+            <div>
+              <div class="testi-name">Sneha Nair</div>
+              <div class="testi-role">Founder, Upnet Software Solutions</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 6 -->
+        <div class="testi-card" data-category="marketing">
+          <div class="testi-card-top">
+            <div class="testi-stars">
+              <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+              <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+              <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+              <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+              <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            </div>
+            <span class="testi-cat">Marketing</span>
+          </div>
+          <p class="testi-quote">"Incredible results! Fazil's expertise in SEO and Google Ads helped us improve our rankings for key terms. Traffic is up significantly and conversions keep climbing."</p>
+          <div class="testi-author">
+            <div class="testi-avatar" style="background-image: url('https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?auto=format&fit=crop&w=400&q=80');"></div>
+            <div>
+              <div class="testi-name">Kavitha Iyer</div>
+              <div class="testi-role">Marketing Head, TechVentures India</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 7 -->
+        <div class="testi-card" data-category="tech">
+          <div class="testi-card-top">
+            <div class="testi-stars">
+              <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+              <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+              <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+              <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+              <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            </div>
+            <span class="testi-cat">Technology</span>
+          </div>
+          <p class="testi-quote">"Outstanding technical knowledge combined with marketing expertise. Our app downloads increased by 250% in just 3 months. Highly professional team player."</p>
+          <div class="testi-author">
+            <div class="testi-avatar" style="background-image: url('https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=400&q=80');"></div>
+            <div>
+              <div class="testi-name">Robert Martinez</div>
+              <div class="testi-role">CTO, AppVenture</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 8 -->
+        <div class="testi-card" data-category="finance">
+          <div class="testi-card-top">
+            <div class="testi-stars">
+              <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+              <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+              <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+              <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+              <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            </div>
+            <span class="testi-cat">Finance</span>
+          </div>
+          <p class="testi-quote">"Alex understands the financial sector's unique challenges. Our lead quality improved dramatically, and we're closing deals 40% faster. A strategic partner we can trust."</p>
+          <div class="testi-author">
+            <div class="testi-avatar" style="background-image: url('https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&w=400&q=80');"></div>
+            <div>
+              <div class="testi-name">Jennifer Lee</div>
+              <div class="testi-role">Director of Growth, InvestPro</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 9 -->
+        <div class="testi-card" data-category="retail">
+          <div class="testi-card-top">
+            <div class="testi-stars">
+              <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+              <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+              <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+              <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+              <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            </div>
+            <span class="testi-cat">Retail</span>
+          </div>
+          <p class="testi-quote">"Transformed our online presence completely. Customer engagement is through the roof, and our repeat purchase rate has doubled. Best investment we've made!"</p>
+          <div class="testi-author">
+            <div class="testi-avatar" style="background-image: url('https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?auto=format&fit=crop&w=400&q=80');"></div>
+            <div>
+              <div class="testi-name">Amanda Foster</div>
+              <div class="testi-role">Owner, Boutique Collective</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 10 -->
+        <div class="testi-card" data-category="healthcare">
+          <div class="testi-card-top">
+            <div class="testi-stars">
+              <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+              <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+              <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+              <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+              <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            </div>
+            <span class="testi-cat">Healthcare</span>
+          </div>
+          <p class="testi-quote">"Sensitive to healthcare compliance while delivering exceptional results. Our patient acquisition costs dropped by 35% while maintaining the highest quality standards."</p>
+          <div class="testi-author">
+            <div class="testi-avatar" style="background-image: url('https://images.unsplash.com/photo-1556157382-97eda2d62296?auto=format&fit=crop&w=400&q=80');"></div>
+            <div>
+              <div class="testi-name">Dr. Patricia Moore</div>
+              <div class="testi-role">Medical Director, WellCare Network</div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="site-footer">
+      <div class="footer-body">
+        <div class="footer-avail">
+          <span class="footer-avail-dot"></span>
+          Available for new projects
+        </div>
+        <h2 class="footer-heading">Let's grow<br>your brand.</h2>
+        <p class="footer-sub">I'm not just here to run campaigns —<br>I'm here to build systems that scale.</p>
+        <a href="contact.html" class="footer-cta">Let's talk!</a>
+      </div>
+      <div class="footer-bar">
+        <span class="footer-bar-left">© 2025 Mohammed Fazil Arfath · Sr. Digital Marketing Specialist</span>
+        <nav class="footer-bar-links">
+          <a href="index.html">Home</a>
+          <a href="about.html">About</a>
+          <a href="testimonials.html">Testimonials</a>
+          <a href="contact.html">Contact</a>
+        </nav>
+      </div>
+    </footer>
+
+    <script>
+      // ── Theme toggle ──
+      (function() {
+        const html = document.documentElement;
+
+        function initCanvas() {
+          const canvas = document.getElementById('theme-canvas');
+          if (!canvas) return;
+          const ctx = canvas.getContext('2d');
+          let W, H, orbs, raf;
+          function resize() { W = canvas.width = window.innerWidth; H = canvas.height = window.innerHeight; }
+          function makeOrbs() {
+            return [
+              { x: W*0.2, y: H*0.2, r: Math.min(W,H)*0.38, vx: 0.12, vy: 0.08, color: 'rgba(0,180,140,0.13)' },
+              { x: W*0.8, y: H*0.7, r: Math.min(W,H)*0.32, vx: -0.09, vy: 0.11, color: 'rgba(79,150,232,0.10)' },
+              { x: W*0.5, y: H*0.9, r: Math.min(W,H)*0.28, vx: 0.07, vy: -0.13, color: 'rgba(0,200,160,0.08)' },
+            ];
+          }
+          function draw() {
+            ctx.clearRect(0,0,W,H);
+            orbs.forEach(o => {
+              o.x += o.vx; o.y += o.vy;
+              if (o.x < -o.r || o.x > W+o.r) o.vx *= -1;
+              if (o.y < -o.r || o.y > H+o.r) o.vy *= -1;
+              const g = ctx.createRadialGradient(o.x,o.y,0,o.x,o.y,o.r);
+              g.addColorStop(0, o.color); g.addColorStop(1, 'transparent');
+              ctx.beginPath(); ctx.arc(o.x,o.y,o.r,0,Math.PI*2);
+              ctx.fillStyle = g; ctx.fill();
+            });
+            raf = requestAnimationFrame(draw);
+          }
+          function start() { resize(); orbs = makeOrbs(); if(raf) cancelAnimationFrame(raf); draw(); }
+          function stop() { if(raf){cancelAnimationFrame(raf);raf=null;} ctx.clearRect(0,0,W,H); }
+          window.addEventListener('resize', () => { resize(); orbs = makeOrbs(); });
+          const observer = new MutationObserver(() => {
+            if (html.getAttribute('data-theme') === 'dark') start(); else stop();
+          });
+          observer.observe(html, { attributes: true, attributeFilter: ['data-theme'] });
+          if (html.getAttribute('data-theme') === 'dark') start();
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+          initCanvas();
+          const btn = document.getElementById('themeToggle');
+          if (btn) {
+            btn.addEventListener('click', () => {
+              const isDark = html.getAttribute('data-theme') === 'dark';
+              if (isDark) { html.removeAttribute('data-theme'); localStorage.setItem('theme','light'); }
+              else { html.setAttribute('data-theme','dark'); localStorage.setItem('theme','dark'); }
+            });
+          }
+        });
+      })();
+
+      // ── Filter functionality ──
+      const filterBtns = document.querySelectorAll('.filter-btn');
+      const cards = document.querySelectorAll('.testi-card');
+
+      filterBtns.forEach(btn => {
+        btn.addEventListener('click', () => {
+          const filter = btn.dataset.filter;
+
+          filterBtns.forEach(b => b.classList.remove('is-active'));
+          btn.classList.add('is-active');
+
+          cards.forEach(card => {
+            if (filter === 'all' || card.dataset.category === filter) {
+              card.classList.remove('is-hidden');
+            } else {
+              card.classList.add('is-hidden');
+            }
+          });
+        });
+      });
+    </script>
+
+  </body>
+</html>
