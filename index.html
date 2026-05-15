@@ -99,7 +99,7 @@
       }
 
       [data-theme="dark"] {
-        --page-bg: #0b0e10;
+        --page-bg: #0a1612;
         --page-color: #e8eaf0;
         --nav-bg: rgba(14,17,20,0.92);
         --nav-border: rgba(255,255,255,0.07);
@@ -187,16 +187,7 @@
         transition: background 0.4s ease, color 0.4s ease;
       }
 
-      /* ── Dark mode animated background ── */
-      #theme-canvas {
-        display: none;
-        position: fixed;
-        inset: 0;
-        z-index: 0;
-        pointer-events: none;
-      }
-      [data-theme="dark"] #theme-canvas { display: block; }
-      [data-theme="dark"] body { background: #0b0e10; }
+      [data-theme="dark"] body { background: #0a1612; }
 
       /* ── NAVBAR ── */
       .hero {
@@ -237,7 +228,7 @@
         width: 40px;
         height: 40px;
         border-radius: 50%;
-        background: url("assets/img.png")
+        background: url("assets/img1.jpeg")
           center/cover no-repeat;
         box-shadow: 0 8px 20px rgba(31, 34, 48, 0.2);
       }
@@ -449,6 +440,320 @@
         max-height: 100%;
       }
 
+      /* ══════════════════════════════════════════
+         PREMIUM INTERACTIVE ANIMATIONS - HERO SECTION
+         ══════════════════════════════════════════ */
+
+      .hero-bg-animation {
+        position: absolute;
+        inset: 0;
+        z-index: 1;
+        pointer-events: none;
+        overflow: hidden;
+      }
+
+      /* Glowing Orbs */
+      .glow-orb {
+        position: absolute;
+        border-radius: 50%;
+        filter: blur(60px);
+        opacity: 0;
+        transform: scale(0.5);
+        transition: all 0.8s cubic-bezier(0.34, 1.56, 0.64, 1);
+        pointer-events: none;
+      }
+
+      [data-theme="dark"] .glow-orb {
+        animation: orb-pulse 4s ease-in-out infinite;
+      }
+
+      [data-theme="dark"] .hero-main:hover .glow-orb {
+        opacity: 1;
+        transform: scale(1);
+      }
+
+      .glow-orb-1 {
+        width: 450px;
+        height: 450px;
+        background: radial-gradient(circle, rgba(79, 150, 232, 0.6) 0%, rgba(79, 150, 232, 0.2) 40%, transparent 70%);
+        bottom: 5%;
+        left: 10%;
+        transition-delay: 0s;
+      }
+
+      .glow-orb-2 {
+        width: 380px;
+        height: 380px;
+        background: radial-gradient(circle, rgba(139, 92, 246, 0.5) 0%, rgba(139, 92, 246, 0.15) 40%, transparent 70%);
+        bottom: 25%;
+        left: 35%;
+        transition-delay: 0.1s;
+      }
+
+      .glow-orb-3 {
+        width: 420px;
+        height: 420px;
+        background: radial-gradient(circle, rgba(236, 72, 153, 0.45) 0%, rgba(236, 72, 153, 0.12) 40%, transparent 70%);
+        bottom: 10%;
+        right: 15%;
+        transition-delay: 0.2s;
+      }
+
+      .glow-orb-4 {
+        width: 350px;
+        height: 350px;
+        background: radial-gradient(circle, rgba(59, 130, 246, 0.4) 0%, rgba(59, 130, 246, 0.1) 40%, transparent 70%);
+        bottom: 40%;
+        right: 30%;
+        transition-delay: 0.15s;
+      }
+
+      .glow-orb-5 {
+        width: 320px;
+        height: 320px;
+        background: radial-gradient(circle, rgba(168, 85, 247, 0.35) 0%, rgba(168, 85, 247, 0.08) 40%, transparent 70%);
+        bottom: 50%;
+        left: 25%;
+        transition-delay: 0.25s;
+      }
+
+      @keyframes orb-pulse {
+        0%, 100% { filter: blur(60px) brightness(1); }
+        50% { filter: blur(70px) brightness(1.2); }
+      }
+
+      [data-theme="dark"] .hero-main:hover .glow-orb-1 {
+        animation: float-orb-1 8s ease-in-out infinite;
+      }
+
+      [data-theme="dark"] .hero-main:hover .glow-orb-2 {
+        animation: float-orb-2 10s ease-in-out infinite;
+      }
+
+      [data-theme="dark"] .hero-main:hover .glow-orb-3 {
+        animation: float-orb-3 9s ease-in-out infinite;
+      }
+
+      [data-theme="dark"] .hero-main:hover .glow-orb-4 {
+        animation: float-orb-4 11s ease-in-out infinite;
+      }
+
+      [data-theme="dark"] .hero-main:hover .glow-orb-5 {
+        animation: float-orb-5 7s ease-in-out infinite;
+      }
+
+      @keyframes float-orb-1 {
+        0%, 100% { transform: translate(0, 0) scale(1); }
+        33% { transform: translate(40px, -50px) scale(1.1); }
+        66% { transform: translate(-30px, -30px) scale(0.95); }
+      }
+
+      @keyframes float-orb-2 {
+        0%, 100% { transform: translate(0, 0) scale(1); }
+        33% { transform: translate(-35px, -40px) scale(1.15); }
+        66% { transform: translate(45px, -60px) scale(0.9); }
+      }
+
+      @keyframes float-orb-3 {
+        0%, 100% { transform: translate(0, 0) scale(1); }
+        33% { transform: translate(50px, -35px) scale(1.05); }
+        66% { transform: translate(-40px, -55px) scale(1.1); }
+      }
+
+      @keyframes float-orb-4 {
+        0%, 100% { transform: translate(0, 0) scale(1); }
+        33% { transform: translate(-45px, -45px) scale(1.12); }
+        66% { transform: translate(35px, -25px) scale(0.92); }
+      }
+
+      @keyframes float-orb-5 {
+        0%, 100% { transform: translate(0, 0) scale(1); }
+        33% { transform: translate(30px, -60px) scale(0.95); }
+        66% { transform: translate(-50px, -40px) scale(1.08); }
+      }
+
+      /* Premium Floating Particles */
+      .premium-particle {
+        position: absolute;
+        width: 4px;
+        height: 4px;
+        background: rgba(255, 255, 255, 0.8);
+        border-radius: 50%;
+        pointer-events: none;
+        opacity: 0;
+        box-shadow: 0 0 10px rgba(79, 150, 232, 0.8), 0 0 20px rgba(79, 150, 232, 0.4);
+      }
+
+      [data-theme="dark"] .premium-particle {
+        animation: particle-float 15s linear infinite;
+      }
+
+      [data-theme="dark"] .hero-main:hover .premium-particle {
+        opacity: 1;
+      }
+
+      @keyframes particle-float {
+        0% {
+          transform: translateY(100vh) translateX(0) scale(0);
+          opacity: 0;
+        }
+        10% {
+          opacity: 1;
+          transform: translateY(90vh) translateX(20px) scale(1);
+        }
+        90% {
+          opacity: 1;
+          transform: translateY(10vh) translateX(-20px) scale(1);
+        }
+        100% {
+          transform: translateY(0) translateX(0) scale(0);
+          opacity: 0;
+        }
+      }
+
+      /* Light Rays */
+      .light-ray {
+        position: absolute;
+        bottom: 0;
+        width: 2px;
+        height: 0;
+        background: linear-gradient(to top, rgba(79, 150, 232, 0.6), transparent);
+        opacity: 0;
+        transform-origin: bottom;
+        pointer-events: none;
+      }
+
+      [data-theme="dark"] .hero-main:hover .light-ray {
+        animation: ray-shoot 3s ease-out infinite;
+        opacity: 1;
+      }
+
+      @keyframes ray-shoot {
+        0% {
+          height: 0;
+          opacity: 0;
+        }
+        50% {
+          height: 300px;
+          opacity: 0.8;
+        }
+        100% {
+          height: 500px;
+          opacity: 0;
+        }
+      }
+
+      .light-ray-1 { left: 20%; animation-delay: 0s; }
+      .light-ray-2 { left: 40%; animation-delay: 0.5s; }
+      .light-ray-3 { left: 60%; animation-delay: 1s; }
+      .light-ray-4 { left: 80%; animation-delay: 1.5s; }
+
+      /* Shimmer Effect */
+      .shimmer-overlay {
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(
+          90deg,
+          transparent 0%,
+          rgba(255, 255, 255, 0.1) 50%,
+          transparent 100%
+        );
+        transform: translateX(-100%);
+        pointer-events: none;
+        opacity: 0;
+      }
+
+      [data-theme="dark"] .hero-main:hover .shimmer-overlay {
+        animation: shimmer-sweep 3s ease-in-out infinite;
+        opacity: 1;
+      }
+
+      @keyframes shimmer-sweep {
+        0% {
+          transform: translateX(-100%);
+        }
+        100% {
+          transform: translateX(100%);
+        }
+      }
+
+      /* Magnetic Cursor Glow */
+      .cursor-glow {
+        position: absolute;
+        width: 200px;
+        height: 200px;
+        border-radius: 50%;
+        background: radial-gradient(circle, rgba(79, 150, 232, 0.3) 0%, transparent 70%);
+        pointer-events: none;
+        opacity: 0;
+        transform: translate(-50%, -50%);
+        transition: opacity 0.3s ease;
+        filter: blur(40px);
+        z-index: 10;
+      }
+
+      [data-theme="dark"] .hero-main:hover .cursor-glow {
+        opacity: 1;
+      }
+
+      /* Ripple effect */
+      .hero-main::before {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        transform: translateX(-50%) scale(0);
+        width: 80%;
+        height: 80%;
+        background: radial-gradient(circle, rgba(79, 150, 232, 0.15) 0%, transparent 70%);
+        border-radius: 50%;
+        opacity: 0;
+        transition: all 1s cubic-bezier(0.34, 1.56, 0.64, 1);
+        pointer-events: none;
+        z-index: 1;
+      }
+
+      [data-theme="dark"] .hero-main:hover::before {
+        transform: translateX(-50%) scale(1);
+        opacity: 1;
+      }
+
+      /* Sparkle Effect */
+      .sparkle {
+        position: absolute;
+        width: 6px;
+        height: 6px;
+        background: white;
+        clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
+        opacity: 0;
+        pointer-events: none;
+      }
+
+      [data-theme="dark"] .hero-main:hover .sparkle {
+        animation: sparkle-twinkle 2s ease-in-out infinite;
+      }
+
+      @keyframes sparkle-twinkle {
+        0%, 100% {
+          opacity: 0;
+          transform: scale(0) rotate(0deg);
+        }
+        50% {
+          opacity: 1;
+          transform: scale(1.5) rotate(180deg);
+        }
+      }
+
+      .sparkle-1 { top: 20%; left: 15%; animation-delay: 0s; }
+      .sparkle-2 { top: 40%; right: 20%; animation-delay: 0.5s; }
+      .sparkle-3 { top: 60%; left: 25%; animation-delay: 1s; }
+      .sparkle-4 { top: 30%; right: 30%; animation-delay: 1.5s; }
+      .sparkle-5 { top: 70%; right: 15%; animation-delay: 0.7s; }
+
+      .particle-orb {
+        display: none;
+      }
+
       /* Available Badge - Top Center */
       .hero-badge {
         position: absolute;
@@ -497,6 +802,7 @@
         width: auto;
         height: 100%;
         max-height: 100%;
+        max-width: 480px;
         object-fit: contain;
         object-position: bottom center;
         transition: transform 0.6s ease, filter 0.6s ease;
@@ -552,79 +858,327 @@
         opacity: 1;
       }
 
-      /* Left Side Content - HIDDEN */
+      /* Left Side - Hero Text & CTA */
       .hero-left-content {
-        display: none;
+        position: absolute;
+        left: 40px;
+        bottom: 80px;
+        z-index: 4;
+        max-width: 520px;
       }
 
-      /* CTA Button - HIDDEN */
-      .hero-cta-center {
-        display: none;
+      .hero-tagline {
+        margin: 0 0 20px;
+        font-size: clamp(16px, 1.8vw, 22px);
+        line-height: 1.5;
+        font-weight: 600;
+        color: var(--section-text);
+        letter-spacing: -0.3px;
+        transition: color 0.4s ease;
       }
 
-      .primary-cta {
-        display: none;
+      [data-theme="dark"] .hero-tagline {
+        color: rgba(255, 255, 255, 0.9);
+        text-shadow: 0 2px 15px rgba(0, 0, 0, 0.3);
       }
 
-      /* Right Side - Client Proof */
+      .hero-cta-btn {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        padding: 10px 20px;
+        border-radius: 999px;
+        background: #1a1a1a;
+        color: #ffffff;
+        text-decoration: none;
+        font-size: 13px;
+        font-weight: 600;
+        letter-spacing: -0.1px;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+        transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+        position: relative;
+        overflow: hidden;
+        border: 1px solid rgba(255, 255, 255, 0.1);
+      }
+
+      .hero-cta-btn::before {
+        content: '';
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(135deg, rgba(255, 255, 255, 0.1) 0%, transparent 100%);
+        opacity: 0;
+        transition: opacity 0.3s ease;
+      }
+
+      .hero-cta-btn:hover {
+        transform: translateY(-2px) scale(1.03);
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
+        background: #2a2a2a;
+      }
+
+      .hero-cta-btn:hover::before {
+        opacity: 1;
+      }
+
+      .hero-cta-btn:active {
+        transform: translateY(-1px) scale(1.01);
+      }
+
+      .cta-arrow {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        width: 16px;
+        height: 16px;
+        transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+      }
+
+      .hero-cta-btn:hover .cta-arrow {
+        transform: translateX(3px);
+      }
+
+      /* Animated shine effect */
+      .hero-cta-btn::after {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: -100%;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+        transition: left 0.5s ease;
+      }
+
+      .hero-cta-btn:hover::after {
+        left: 100%;
+      }
+
+      [data-theme="dark"] .hero-cta-btn {
+        background: #ffffff;
+        color: #0b0e10;
+        box-shadow: 0 4px 12px rgba(255, 255, 255, 0.2);
+        border: 1px solid rgba(0, 0, 0, 0.1);
+      }
+
+      [data-theme="dark"] .hero-cta-btn:hover {
+        background: #f0f0f0;
+        box-shadow: 0 8px 20px rgba(255, 255, 255, 0.3);
+      }
+
+      /* Right Side - Stat Cards */
       .hero-right-stats {
         position: absolute;
         right: 40px;
-        top: 40%;
-        transform: translateY(-50%);
+        bottom: 80px;
         z-index: 4;
         display: flex;
-        align-items: center;
-        gap: 14px;
+        gap: 12px;
+        align-items: stretch;
       }
 
-      .client-avatars {
+      .stat-card {
+        background: var(--card-bg);
+        border: 1px solid var(--card-border);
+        border-radius: 16px;
+        padding: 20px 24px;
+        min-width: 140px;
+        backdrop-filter: blur(10px);
+        transition: all 0.3s ease;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+      }
+
+      .stat-card:hover {
+        transform: translateY(-4px);
+        box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+      }
+
+      [data-theme="dark"] .stat-card {
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+      }
+
+      [data-theme="dark"] .stat-card:hover {
+        box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+      }
+
+      .stat-card strong {
+        display: block;
+        font-size: 32px;
+        font-weight: 800;
+        line-height: 1;
+        margin-bottom: 8px;
+        letter-spacing: -1px;
+        color: var(--section-text);
+        transition: color 0.4s ease;
+      }
+
+      .stat-card span {
+        display: block;
+        font-size: 13px;
+        font-weight: 500;
+        color: var(--muted-text);
+        line-height: 1.3;
+        transition: color 0.4s ease;
+      }
+
+      /* Top Left - Specialty Badge */
+      .hero-specialty-badge {
+        position: absolute;
+        left: 40px;
+        top: 100px;
+        z-index: 4;
+        display: inline-flex;
+        align-items: center;
+        gap: 10px;
+        padding: 12px 20px;
+        background: var(--card-bg);
+        border: 1px solid var(--card-border);
+        border-radius: 999px;
+        backdrop-filter: blur(10px);
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+        transition: all 0.3s ease;
+      }
+
+      .hero-specialty-badge:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+      }
+
+      [data-theme="dark"] .hero-specialty-badge {
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+      }
+
+      .specialty-icon {
+        width: 24px;
+        height: 24px;
         display: flex;
         align-items: center;
-      }
-
-      .client-avatar {
-        width: 46px;
-        height: 46px;
+        justify-content: center;
+        background: var(--section-text);
         border-radius: 50%;
-        border: 3px solid var(--card-bg);
-        margin-left: -14px;
-        background: #4a5568;
-        transition: transform 0.3s ease, border-color 0.4s ease;
+        flex-shrink: 0;
+        transition: all 0.4s ease;
+        animation: pulseGlow 3s ease-in-out infinite;
       }
 
-      .client-avatar:first-child {
-        margin-left: 0;
+      [data-theme="dark"] .specialty-icon {
+        background: rgba(255, 255, 255, 0.95);
       }
 
-      .client-avatar:hover {
-        transform: translateY(-4px);
+      .specialty-icon svg {
+        width: 14px;
+        height: 14px;
+        stroke: white;
+        transition: stroke 0.4s ease;
       }
 
+      [data-theme="dark"] .specialty-icon svg {
+        stroke: #000;
+      }
+
+      @keyframes pulseGlow {
+        0%, 100% {
+          transform: scale(1);
+          box-shadow: 0 0 0 0 rgba(79, 150, 232, 0.4);
+        }
+        50% {
+          transform: scale(1.05);
+          box-shadow: 0 0 0 8px rgba(79, 150, 232, 0);
+        }
+      }
+
+      .hero-specialty-badge:hover .specialty-icon {
+        animation: pulseGlow 1s ease-in-out infinite;
+      }
+
+      .specialty-text {
+        font-size: 13px;
+        font-weight: 600;
+        color: var(--section-text);
+        letter-spacing: -0.2px;
+        transition: color 0.4s ease;
+      }
+
+      /* Top Right - Achievement Badges */
+      .hero-achievements {
+        position: absolute;
+        right: 40px;
+        top: 100px;
+        z-index: 4;
+        display: flex;
+        gap: 10px;
+        flex-wrap: wrap;
+        max-width: 300px;
+        justify-content: flex-end;
+      }
+
+      .achievement-badge {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        padding: 12px 16px;
+        background: var(--card-bg);
+        border: 1px solid var(--card-border);
+        border-radius: 12px;
+        backdrop-filter: blur(10px);
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+        transition: all 0.3s ease;
+        min-width: 130px;
+      }
+
+      .achievement-badge:nth-child(3) {
+        flex-basis: 100%;
+        justify-content: center;
+        margin: 0 auto;
+        max-width: 145px;
+      }
+
+      .achievement-badge:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+      }
+
+      [data-theme="dark"] .achievement-badge {
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+      }
+
+      .achievement-icon {
+        width: 28px;
+        height: 28px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: var(--section-text);
+        border-radius: 8px;
+        flex-shrink: 0;
+        transition: background 0.4s ease;
+      }
+
+      [data-theme="dark"] .achievement-icon {
+        background: rgba(255, 255, 255, 0.95);
+      }
+
+      .achievement-icon svg {
+        width: 16px;
+        height: 16px;
+        stroke: white;
+      }
+
+      [data-theme="dark"] .achievement-icon svg {
+        stroke: #000;
+      }
+
+      .achievement-label {
+        font-size: 12px;
+        font-weight: 600;
+        color: var(--section-text);
+        line-height: 1.3;
+        transition: color 0.4s ease;
+      }
+
+      .client-avatars,
+      .client-avatar,
       .client-count {
-        margin-left: 8px;
-      }
-
-      .client-count strong {
-        display: block;
-        font-size: 36px;
-        font-weight: 800;
-        color: #4f96e8;
-        line-height: 1;
-        margin-bottom: 4px;
-        transition: color 0.4s ease;
-      }
-
-      [data-theme="dark"] .client-count strong {
-        color: #5fa8ff;
-      }
-
-      .client-count span {
-        display: block;
-        font-size: 14px;
-        color: var(--muted-text);
-        font-weight: 500;
-        transition: color 0.4s ease;
+        display: none;
       }
 
       /* Hide Bottom Stats Bar */
@@ -649,8 +1203,66 @@
           padding: 28px 28px 0;
         }
 
+        .hero-specialty-badge {
+          left: 32px;
+          top: 90px;
+          padding: 10px 18px;
+        }
+
+        .specialty-text {
+          font-size: 12px;
+        }
+
+        .hero-achievements {
+          right: 32px;
+          top: 90px;
+          gap: 8px;
+          max-width: 280px;
+        }
+
+        .achievement-badge {
+          min-width: 120px;
+          padding: 10px 14px;
+          gap: 8px;
+        }
+
+        .achievement-icon {
+          width: 26px;
+          height: 26px;
+        }
+
+        .achievement-icon svg {
+          width: 14px;
+          height: 14px;
+        }
+
+        .achievement-label {
+          font-size: 11px;
+        }
+
+        .hero-left-content {
+          left: 32px;
+          bottom: 60px;
+          max-width: 450px;
+        }
+
         .hero-right-stats {
           right: 32px;
+          bottom: 60px;
+          gap: 10px;
+        }
+
+        .stat-card {
+          min-width: 120px;
+          padding: 18px 20px;
+        }
+
+        .stat-card strong {
+          font-size: 28px;
+        }
+
+        .stat-card span {
+          font-size: 12px;
         }
       }
 
@@ -673,9 +1285,78 @@
           padding: 7px 16px;
         }
 
+        .hero-specialty-badge {
+          left: 24px;
+          top: 80px;
+          padding: 9px 16px;
+          gap: 8px;
+        }
+
+        .specialty-icon {
+          width: 20px;
+          height: 20px;
+          font-size: 11px;
+        }
+
+        .specialty-text {
+          font-size: 11px;
+        }
+
+        .hero-achievements {
+          right: 24px;
+          top: 80px;
+          gap: 6px;
+        }
+
+        .achievement-badge {
+          min-width: 70px;
+          padding: 9px 12px;
+        }
+
+        .achievement-icon {
+          width: 26px;
+          height: 26px;
+          font-size: 15px;
+        }
+
+        .achievement-label {
+          font-size: 9px;
+        }
+
+        .hero-left-content {
+          left: 24px;
+          bottom: 50px;
+          max-width: 380px;
+        }
+
+        .hero-tagline {
+          font-size: 18px;
+          margin-bottom: 18px;
+        }
+
+        .hero-cta-btn {
+          padding: 9px 18px;
+          font-size: 12px;
+        }
+
         .hero-right-stats {
           right: 24px;
-          top: 35%;
+          bottom: 50px;
+          gap: 8px;
+        }
+
+        .stat-card {
+          min-width: 100px;
+          padding: 16px 18px;
+        }
+
+        .stat-card strong {
+          font-size: 26px;
+          margin-bottom: 6px;
+        }
+
+        .stat-card span {
+          font-size: 11px;
         }
 
         .client-count strong {
@@ -694,9 +1375,32 @@
           font-size: 11px;
         }
 
+        .hero-specialty-badge {
+          display: none;
+        }
+
+        .hero-achievements {
+          display: none;
+        }
+
+        .hero-left-content {
+          left: 16px;
+          bottom: 40px;
+          max-width: calc(100% - 32px);
+        }
+
+        .hero-tagline {
+          font-size: 16px;
+          margin-bottom: 16px;
+        }
+
+        .hero-cta-btn {
+          padding: 8px 16px;
+          font-size: 12px;
+        }
+
         .hero-right-stats {
-          right: 16px;
-          top: 30%;
+          display: none;
         }
 
         .client-avatar {
@@ -718,6 +1422,15 @@
         .hero-badge {
           font-size: 10px;
           padding: 6px 12px;
+        }
+
+        .hero-tagline {
+          font-size: 15px;
+        }
+
+        .hero-cta-btn {
+          padding: 8px 16px;
+          font-size: 11px;
         }
 
         .client-count strong {
@@ -969,6 +1682,24 @@
         margin-top: 26px;
       }
 
+      @keyframes cv-glow-pulse {
+        0%, 100% {
+          box-shadow: 0 0 20px rgba(26, 26, 26, 0.4), 0 0 40px rgba(26, 26, 26, 0.2), 0 4px 12px rgba(0, 0, 0, 0.15);
+        }
+        50% {
+          box-shadow: 0 0 30px rgba(26, 26, 26, 0.6), 0 0 60px rgba(26, 26, 26, 0.3), 0 6px 20px rgba(0, 0, 0, 0.2);
+        }
+      }
+
+      @keyframes cv-glow-pulse-dark {
+        0%, 100% {
+          box-shadow: 0 0 25px rgba(255, 255, 255, 0.5), 0 0 50px rgba(255, 255, 255, 0.3), 0 4px 12px rgba(255, 255, 255, 0.2);
+        }
+        50% {
+          box-shadow: 0 0 40px rgba(255, 255, 255, 0.7), 0 0 80px rgba(255, 255, 255, 0.4), 0 6px 20px rgba(255, 255, 255, 0.3);
+        }
+      }
+
       .cv-btn {
         display: inline-block;
         padding: 11px 24px;
@@ -978,15 +1709,21 @@
         text-decoration: none;
         font-size: 14px;
         font-weight: 600;
-        transition: opacity 0.2s ease;
+        transition: opacity 0.2s ease, transform 0.2s ease;
+        animation: cv-glow-pulse 2s ease-in-out infinite;
+        position: relative;
       }
       
       [data-theme="dark"] .cv-btn {
         background: #ffffff;
         color: #0b0e10 !important;
+        animation: cv-glow-pulse-dark 2s ease-in-out infinite;
       }
 
-      .cv-btn:hover { opacity: 0.8; }
+      .cv-btn:hover {
+        opacity: 0.9;
+        transform: translateY(-2px);
+      }
 
       /* ══════════════════════════════════════════
          SERVICES — Premium SaaS-style section
@@ -1045,11 +1782,11 @@
 
       /* ── Heading ── */
       .services-title {
-        margin: 0 auto 56px;
+        margin: 0 auto 16px;
         max-width: 760px;
-        font-size: clamp(38px, 5vw, 64px);
-        line-height: 1.06;
-        letter-spacing: -1.8px;
+        font-size: clamp(32px, 4vw, 52px);
+        line-height: 1.05;
+        letter-spacing: -1.4px;
         font-weight: 800;
         color: var(--svc-title);
         opacity: 0;
@@ -1059,6 +1796,22 @@
       }
 
       .services-title.is-visible {
+        opacity: 1;
+        transform: translateY(0);
+      }
+
+      .services-subtext {
+        margin: 0 auto 56px;
+        max-width: 680px;
+        font-size: 16px;
+        line-height: 1.6;
+        color: var(--muted-text);
+        opacity: 0;
+        transform: translateY(18px);
+        transition: opacity 0.6s ease 0.2s, transform 0.6s ease 0.2s, color 0.4s ease;
+      }
+
+      .services-subtext.is-visible {
         opacity: 1;
         transform: translateY(0);
       }
@@ -1163,13 +1916,43 @@
       }
 
       .testi-heading {
-        margin: 0;
+        margin: 0 0 16px 0;
         font-size: clamp(32px, 4vw, 52px);
         font-weight: 800;
         letter-spacing: -1.4px;
         line-height: 1.05;
         color: var(--section-text);
-        max-width: 480px;
+        max-width: 580px;
+        transition: color 0.4s ease;
+      }
+
+      .testi-subtext {
+        margin: 0 auto 32px;
+        font-size: 16px;
+        line-height: 1.6;
+        color: var(--muted-text);
+        max-width: 620px;
+        transition: color 0.4s ease;
+      }
+
+      .recent-heading {
+        margin: 16px auto 12px;
+        font-size: clamp(32px, 4vw, 52px);
+        font-weight: 800;
+        letter-spacing: -1.4px;
+        line-height: 1.05;
+        color: var(--section-text);
+        text-align: center;
+        transition: color 0.4s ease;
+      }
+
+      .recent-subtext {
+        margin: 0 auto 48px;
+        font-size: 16px;
+        line-height: 1.6;
+        color: var(--muted-text);
+        max-width: 640px;
+        text-align: center;
         transition: color 0.4s ease;
       }
 
@@ -1855,13 +2638,12 @@
   <body>
 
     <!-- ── HERO ── -->
-    <canvas id="theme-canvas"></canvas>
     <header class="navbar">
       <a href="index.html" style="text-decoration: none; color: inherit;">
         <div class="nav-profile">
           <div class="nav-profile-avatar"></div>
           <div class="nav-profile-text">
-            <strong>Mohammed Fazil Arfath</strong>
+            <strong>Mr. Fazil</strong>
             <span>Based in Bangalore</span>
           </div>
         </div>
@@ -1888,6 +2670,45 @@
       <div class="hero-card">
         <!-- Main Hero Content -->
         <div class="hero-main">
+          <!-- Premium Animation Elements -->
+          <div class="hero-bg-animation">
+            <!-- Glowing Orbs -->
+            <div class="glow-orb glow-orb-1"></div>
+            <div class="glow-orb glow-orb-2"></div>
+            <div class="glow-orb glow-orb-3"></div>
+            <div class="glow-orb glow-orb-4"></div>
+            <div class="glow-orb glow-orb-5"></div>
+            
+            <!-- Floating Particles -->
+            <div class="premium-particle" style="left: 10%; animation-delay: 0s;"></div>
+            <div class="premium-particle" style="left: 25%; animation-delay: 2s;"></div>
+            <div class="premium-particle" style="left: 40%; animation-delay: 4s;"></div>
+            <div class="premium-particle" style="left: 55%; animation-delay: 1s;"></div>
+            <div class="premium-particle" style="left: 70%; animation-delay: 3s;"></div>
+            <div class="premium-particle" style="left: 85%; animation-delay: 5s;"></div>
+            <div class="premium-particle" style="left: 15%; animation-delay: 6s;"></div>
+            <div class="premium-particle" style="left: 60%; animation-delay: 7s;"></div>
+            
+            <!-- Light Rays -->
+            <div class="light-ray light-ray-1"></div>
+            <div class="light-ray light-ray-2"></div>
+            <div class="light-ray light-ray-3"></div>
+            <div class="light-ray light-ray-4"></div>
+            
+            <!-- Shimmer Overlay -->
+            <div class="shimmer-overlay"></div>
+            
+            <!-- Sparkles -->
+            <div class="sparkle sparkle-1"></div>
+            <div class="sparkle sparkle-2"></div>
+            <div class="sparkle sparkle-3"></div>
+            <div class="sparkle sparkle-4"></div>
+            <div class="sparkle sparkle-5"></div>
+          </div>
+
+          <!-- Magnetic Cursor Glow -->
+          <div class="cursor-glow"></div>
+
           <!-- Available Badge - Top Center -->
           <div class="hero-badge">
             <span class="hero-badge-dot"></span>
@@ -1897,16 +2718,75 @@
           <!-- Person Image - Starting from Bottom -->
           <img src="assets/img.png" alt="Mohammed Fazil Arfath" class="hero-person-image">
 
-          <!-- Right Side - Client Proof -->
-          <div class="hero-right-stats">
-            <div class="client-avatars">
-              <div class="client-avatar" style="background: url('https://i.pravatar.cc/150?img=1') center/cover;"></div>
-              <div class="client-avatar" style="background: url('https://i.pravatar.cc/150?img=2') center/cover;"></div>
-              <div class="client-avatar" style="background: url('https://i.pravatar.cc/150?img=3') center/cover;"></div>
+          <!-- Top Left - Specialty Badge -->
+          <div class="hero-specialty-badge">
+            <div class="specialty-icon">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/>
+                <circle cx="12" cy="7" r="4"/>
+              </svg>
             </div>
-            <div class="client-count">
-              <strong>56+</strong>
-              <span>Happy clients</span>
+            <span class="specialty-text">Digital Marketing Specialist</span>
+          </div>
+
+          <!-- Top Right - Achievement Badges -->
+          <div class="hero-achievements">
+            <div class="achievement-badge">
+              <div class="achievement-icon">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <circle cx="12" cy="8" r="7"/>
+                  <polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88"/>
+                </svg>
+              </div>
+              <span class="achievement-label">Certified<br>Expert</span>
+            </div>
+            <div class="achievement-badge">
+              <div class="achievement-icon">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <line x1="12" y1="20" x2="12" y2="10"/>
+                  <line x1="18" y1="20" x2="18" y2="4"/>
+                  <line x1="6" y1="20" x2="6" y2="16"/>
+                </svg>
+              </div>
+              <span class="achievement-label">3.4× ROAS<br>Average</span>
+            </div>
+            <div class="achievement-badge">
+              <div class="achievement-icon">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <rect x="2" y="7" width="20" height="14" rx="2" ry="2"/>
+                  <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/>
+                </svg>
+              </div>
+              <span class="achievement-label">B2B SaaS<br>Focus</span>
+            </div>
+          </div>
+
+          <!-- Left Side - Hero Text & CTA -->
+          <div class="hero-left-content">
+            <p class="hero-tagline">
+              I drive measurable growth through<br>
+              data-driven marketing strategies<br>
+              and optimized digital campaigns.
+            </p>
+            <a href="about.html" class="hero-cta-btn">
+              <span>Know More</span>
+              <span class="cta-arrow">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M5 12h14M12 5l7 7-7 7"/>
+                </svg>
+              </span>
+            </a>
+          </div>
+
+          <!-- Right Side - Stat Cards -->
+          <div class="hero-right-stats">
+            <div class="stat-card">
+              <strong>8+</strong>
+              <span>Years<br>experience</span>
+            </div>
+            <div class="stat-card">
+              <strong>60+</strong>
+              <span>Campaigns<br>launched</span>
             </div>
           </div>
         </div>
@@ -1917,6 +2797,8 @@
     <section class="recent">
       <div class="recent-wrap">
         <div class="about-pill">Recent experience</div>
+        <h2 class="recent-heading">Career Highlights & Key Roles</h2>
+        <p class="recent-subtext">8+ years of driving growth through strategic campaigns and<br>data-driven marketing across leading B2B SaaS and tech companies.</p>
         <div class="xp-list">
 
           <article class="xp-row">
@@ -2006,8 +2888,13 @@
 
         <!-- Heading — NO scroll zoom, stable -->
         <h2 class="services-title" data-svc-title>
-          Everything your brand needs<br>to show up right.
+          Full-Stack Digital Marketing Solutions
         </h2>
+        
+        <!-- Subtext -->
+        <p class="services-subtext">
+          From strategy to execution, I deliver data-driven campaigns that drive<br>measurable growth and maximize your ROI across all digital channels.
+        </p>
 
         <!-- Pills grid -->
         <div class="svc-grid" data-svc-grid>
@@ -2108,7 +2995,8 @@
 
         <div class="testi-header">
           <div class="about-pill" style="margin:0 auto 16px;">Testimonials</div>
-          <h2 class="testi-heading">What clients say<br>about working with me.</h2>
+          <h2 class="testi-heading">Trusted by Industry Leaders</h2>
+          <p class="testi-subtext">Real results from real partnerships. See how I've helped businesses<br>scale their digital presence and achieve measurable growth.</p>
         </div>
 
         <div class="testi-viewport">
@@ -2389,68 +3277,7 @@
         const saved = localStorage.getItem('theme') || 'light';
         if (saved === 'dark') html.setAttribute('data-theme', 'dark');
 
-        function initCanvas() {
-          const canvas = document.getElementById('theme-canvas');
-          if (!canvas) return;
-          const ctx = canvas.getContext('2d');
-          let W, H, orbs, raf;
-
-          function resize() {
-            W = canvas.width = window.innerWidth;
-            H = canvas.height = window.innerHeight;
-          }
-
-          function makeOrbs() {
-            return [
-              { x: W * 0.2, y: H * 0.2, r: Math.min(W, H) * 0.38, vx: 0.12, vy: 0.08, color: 'rgba(0,180,140,0.13)' },
-              { x: W * 0.8, y: H * 0.7, r: Math.min(W, H) * 0.32, vx: -0.09, vy: 0.11, color: 'rgba(79,150,232,0.10)' },
-              { x: W * 0.5, y: H * 0.9, r: Math.min(W, H) * 0.28, vx: 0.07, vy: -0.13, color: 'rgba(0,200,160,0.08)' },
-            ];
-          }
-
-          function draw() {
-            ctx.clearRect(0, 0, W, H);
-            orbs.forEach(o => {
-              o.x += o.vx; o.y += o.vy;
-              if (o.x < -o.r || o.x > W + o.r) o.vx *= -1;
-              if (o.y < -o.r || o.y > H + o.r) o.vy *= -1;
-              const g = ctx.createRadialGradient(o.x, o.y, 0, o.x, o.y, o.r);
-              g.addColorStop(0, o.color);
-              g.addColorStop(1, 'transparent');
-              ctx.beginPath();
-              ctx.arc(o.x, o.y, o.r, 0, Math.PI * 2);
-              ctx.fillStyle = g;
-              ctx.fill();
-            });
-            raf = requestAnimationFrame(draw);
-          }
-
-          function start() {
-            resize();
-            orbs = makeOrbs();
-            if (raf) cancelAnimationFrame(raf);
-            draw();
-          }
-
-          function stop() {
-            if (raf) { cancelAnimationFrame(raf); raf = null; }
-            ctx.clearRect(0, 0, W, H);
-          }
-
-          window.addEventListener('resize', () => { resize(); orbs = makeOrbs(); });
-
-          // Watch theme changes
-          const observer = new MutationObserver(() => {
-            if (html.getAttribute('data-theme') === 'dark') start();
-            else stop();
-          });
-          observer.observe(html, { attributes: true, attributeFilter: ['data-theme'] });
-
-          if (html.getAttribute('data-theme') === 'dark') start();
-        }
-
         document.addEventListener('DOMContentLoaded', () => {
-          initCanvas();
           const btn = document.getElementById('themeToggle');
           if (btn) {
             btn.addEventListener('click', () => {
@@ -2462,6 +3289,43 @@
                 html.setAttribute('data-theme', 'dark');
                 localStorage.setItem('theme', 'dark');
               }
+            });
+          }
+
+          // ── Premium Interactive Effects ──
+          const heroMain = document.querySelector('.hero-main');
+          const orbs = document.querySelectorAll('.glow-orb');
+          const cursorGlow = document.querySelector('.cursor-glow');
+          
+          if (heroMain && orbs.length > 0) {
+            // Mouse move - Orbs follow cursor
+            heroMain.addEventListener('mousemove', (e) => {
+              const rect = heroMain.getBoundingClientRect();
+              const x = e.clientX - rect.left;
+              const y = e.clientY - rect.top;
+              const centerX = rect.width / 2;
+              const centerY = rect.height / 2;
+              
+              // Move orbs with parallax
+              orbs.forEach((orb, index) => {
+                const speed = 0.02 + (index * 0.01);
+                const moveX = (x - centerX) * speed;
+                const moveY = (y - centerY) * speed;
+                
+                orb.style.transform = `translate(${moveX}px, ${moveY}px) scale(1)`;
+              });
+
+              // Magnetic cursor glow
+              if (cursorGlow) {
+                cursorGlow.style.left = x + 'px';
+                cursorGlow.style.top = y + 'px';
+              }
+            });
+
+            heroMain.addEventListener('mouseleave', () => {
+              orbs.forEach(orb => {
+                orb.style.transform = '';
+              });
             });
           }
         });
@@ -2591,6 +3455,7 @@
 
         const badge  = document.querySelector("[data-svc-badge]");
         const title  = document.querySelector("[data-svc-title]");
+        const subtext = document.querySelector(".services-subtext");
         const pills  = document.querySelectorAll("[data-svc-grid] .svc-pill");
 
         function revealSection() {
@@ -2600,6 +3465,11 @@
           // Title — 100ms delay
           if (title) {
             setTimeout(() => title.classList.add("is-visible"), 100);
+          }
+
+          // Subtext — 180ms delay
+          if (subtext) {
+            setTimeout(() => subtext.classList.add("is-visible"), 180);
           }
 
           // Pills — staggered

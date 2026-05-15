@@ -52,7 +52,7 @@
         --menu-color: rgba(255,255,255,0.85);
         --btn-bg: rgba(255,255,255,0.08);
         --btn-color: #e8eaf0;
-        --page-bg: #0b0e10;
+        --page-bg: #0a1612;
         --page-color: #e8eaf0;
         --section-text: #f0f2f8;
         --muted-text: rgba(255,255,255,0.65);
@@ -78,15 +78,12 @@
       html { scroll-behavior: smooth; transition: background 0.4s ease, color 0.4s ease; }
 
       body { margin: 0; font-family: "Inter", sans-serif; background: var(--page-bg); color: var(--page-color); padding-top: var(--nav-height); -webkit-font-smoothing: antialiased; transition: background 0.4s ease, color 0.4s ease; }
-      [data-theme="dark"] body { background: #0b0e10; }
-
-      #theme-canvas { display: none; position: fixed; inset: 0; z-index: 0; pointer-events: none; }
-      [data-theme="dark"] #theme-canvas { display: block; }
+      [data-theme="dark"] body { background: #0a1612; }
 
       /* NAVBAR */
       .navbar { position: fixed; top: 0; left: 0; width: 100%; min-height: var(--nav-height); padding: 14px var(--side-space); z-index: 100; display: grid; grid-template-columns: 1fr auto 1fr; align-items: center; background: var(--nav-bg); backdrop-filter: blur(10px); border-bottom: 1px solid var(--nav-border); transition: background 0.4s ease, border-color 0.4s ease; }
       .nav-profile { display: flex; align-items: center; gap: 10px; justify-self: start; }
-      .nav-profile-avatar { width: 40px; height: 40px; border-radius: 50%; background: url("assets/img.png") center/cover no-repeat; box-shadow: 0 8px 20px rgba(31,34,48,0.2); }
+      .nav-profile-avatar { width: 40px; height: 40px; border-radius: 50%; background: url("assets/img1.jpeg") center/cover no-repeat; box-shadow: 0 8px 20px rgba(31,34,48,0.2); }
       .nav-profile-text strong { display: block; font-size: 18px; font-weight: 600; line-height: 1.1; color: var(--nav-text); transition: color 0.4s ease; }
       .nav-profile-text span { color: var(--nav-muted); font-size: 14px; transition: color 0.4s ease; }
       .nav-right { display: flex; align-items: center; gap: 10px; justify-self: end; }
@@ -193,19 +190,166 @@
         50% { transform: translateY(4px); }
       }
 
-      /* STATS */
-      .stats-row { padding: 0 var(--section-space) 60px; }
-      .stats-inner { max-width: 900px; margin: 0 auto; display: grid; grid-template-columns: repeat(4,1fr); border-top: 1px solid var(--testi-author-border); border-bottom: 1px solid var(--testi-author-border); }
-      .stat-cell { padding: 28px 20px; border-right: 1px solid var(--testi-author-border); text-align: center; }
-      .stat-cell:last-child { border-right: none; }
-      .stat-cell strong { display: block; font-size: clamp(26px,3vw,38px); font-weight: 800; letter-spacing: -1.2px; color: var(--section-text); line-height: 1; margin-bottom: 6px; transition: color 0.4s ease; }
-      .stat-cell span { font-size: 13px; color: var(--muted-text); font-weight: 500; transition: color 0.4s ease; }
+      /* HERO SECTION - MATCHING ABOUT PAGE */
+      .community-section {
+        min-height: 100svh;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        padding: 0 var(--section-space);
+        text-align: center;
+        gap: 48px;
+      }
+      
+      .community-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 16px;
+        max-width: 780px;
+      }
+      
+      .community-content {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 16px;
+      }
+      
+      .community-heading {
+        margin: 0;
+        font-size: clamp(34px, 4.6vw, 58px);
+        line-height: 1.08;
+        font-weight: 800;
+        max-width: 780px;
+        letter-spacing: -1.8px;
+        color: var(--section-text);
+        transition: color 0.4s ease;
+      }
+      
+      .hero-sub {
+        margin: 0;
+        max-width: 500px;
+        font-size: 16.5px;
+        line-height: 1.65;
+        color: var(--muted-text);
+        transition: color 0.4s ease;
+      }
+      
+      .community-stats {
+        width: 100%;
+        max-width: 780px;
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 0;
+        border-top: 1px solid var(--card-border);
+        border-bottom: 1px solid var(--card-border);
+        margin-bottom: 0;
+        transition: border-color 0.4s ease;
+      }
+      
+      .stat-item {
+        padding: 26px 16px;
+        border-right: 1px solid var(--card-border);
+        text-align: center;
+        transition: border-color 0.4s ease;
+      }
+      
+      .stat-item:last-child {
+        border-right: none;
+      }
+      
+      .stat-number {
+        display: block;
+        font-size: clamp(26px, 2.8vw, 36px);
+        font-weight: 800;
+        letter-spacing: -1.2px;
+        color: var(--section-text);
+        line-height: 1;
+        margin-bottom: 6px;
+        transition: color 0.4s ease;
+      }
+      
+      .stat-label {
+        font-size: 12.5px;
+        color: var(--muted-text);
+        font-weight: 500;
+        letter-spacing: 0.01em;
+        transition: color 0.4s ease;
+      }
 
-      /* FILTERS */
-      .filters { display: flex; flex-wrap: wrap; justify-content: center; gap: 8px; padding: 0 var(--section-space) 44px; }
-      .filter-btn { padding: 9px 20px; border-radius: 999px; border: 1px solid var(--card-border); background: var(--card-bg); color: var(--muted-text); font-size: 13px; font-weight: 600; cursor: pointer; transition: background 0.2s ease, color 0.2s ease, box-shadow 0.2s ease; font-family: "Inter", sans-serif; }
-      .filter-btn:hover { background: var(--testi-arrow-bg); box-shadow: 0 2px 8px rgba(0,0,0,0.08); }
-      .filter-btn.is-active { background: var(--section-text); color: var(--page-bg); border-color: var(--section-text); box-shadow: 0 4px 14px rgba(17,19,24,0.2); }
+      /* FILTERS SECTION */
+      .filters-section {
+        padding: 60px var(--section-space) 40px;
+        background: var(--page-bg);
+      }
+      
+      .filters-header {
+        text-align: center;
+        max-width: 700px;
+        margin: 0 auto 36px;
+      }
+      
+      .filters-heading {
+        margin: 0 0 12px;
+        font-size: clamp(28px, 3.5vw, 42px);
+        font-weight: 800;
+        letter-spacing: -1.2px;
+        color: var(--section-text);
+        transition: color 0.4s ease;
+      }
+      
+      .filters-sub {
+        margin: 0;
+        font-size: 15px;
+        line-height: 1.6;
+        color: var(--muted-text);
+        transition: color 0.4s ease;
+      }
+      
+      .filters {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 10px;
+        max-width: 800px;
+        margin: 0 auto;
+      }
+      
+      .filter-btn {
+        padding: 11px 24px;
+        border-radius: 999px;
+        border: 1px solid var(--card-border);
+        background: var(--card-bg);
+        color: var(--section-text);
+        font-size: 14px;
+        font-weight: 600;
+        cursor: pointer;
+        transition: all 0.2s ease;
+        font-family: "Inter", sans-serif;
+        box-shadow: 0 2px 6px rgba(0,0,0,0.04);
+      }
+      
+      .filter-btn:hover {
+        background: var(--section-text);
+        color: var(--page-bg);
+        transform: translateY(-1px);
+        box-shadow: 0 4px 12px rgba(0,0,0,0.12);
+      }
+      
+      .filter-btn.is-active {
+        background: #1a1a1a;
+        color: #ffffff;
+        border-color: #1a1a1a;
+        box-shadow: 0 4px 14px rgba(26,26,26,0.25);
+      }
+      
+      [data-theme="dark"] .filter-btn.is-active {
+        background: #ffffff;
+        color: #0b0e10;
+        border-color: #ffffff;
+      }
 
       /* GRID */
       .testi-section { padding: 0 var(--section-space) 100px; }
@@ -266,27 +410,76 @@
         body { --nav-height: 72px; --section-space: calc(var(--side-space) + 22px); }
         .menu { display: none; }
         .nav-profile-text span { display: none; }
-        .hero { height: calc(100vh - var(--nav-height)); }
-        .hero h1 { font-size: clamp(32px, 8vw, 48px); }
-        .stats-inner { grid-template-columns: repeat(2,1fr); }
-        .stat-cell:nth-child(2) { border-right: none; }
-        .stat-cell:nth-child(3) { border-top: 1px solid rgba(0,0,0,0.08); }
-        .stat-cell:nth-child(4) { border-top: 1px solid rgba(0,0,0,0.08); border-right: none; }
         .testi-grid { grid-template-columns: 1fr; }
         .footer-bar { position: relative; flex-direction: column; text-align: center; gap: 10px; margin-top: 60px; }
+        
+        /* Hero Section Mobile - Matching About Page */
+        .community-section {
+          padding: 0 var(--section-space);
+          gap: 36px;
+          min-height: 100svh;
+        }
+        
+        .hero-sub {
+          font-size: 15px;
+        }
+        
+        .community-stats {
+          grid-template-columns: repeat(2, 1fr);
+          margin-bottom: 0;
+        }
+        
+        .stat-item:nth-child(2) {
+          border-right: none;
+        }
+        
+        .stat-item:nth-child(3) {
+          border-top: 1px solid var(--card-border);
+        }
+        
+        .stat-item:nth-child(4) {
+          border-top: 1px solid var(--card-border);
+          border-right: none;
+        }
+        
+        /* Filters Section Mobile */
+        .filters-section {
+          padding: 40px var(--section-space) 32px;
+        }
+        
+        .filters-header {
+          margin-bottom: 28px;
+        }
+        
+        .filters-heading {
+          font-size: clamp(24px, 6vw, 32px);
+          margin-bottom: 10px;
+        }
+        
+        .filters-sub {
+          font-size: 14px;
+        }
+        
+        .filters {
+          gap: 8px;
+        }
+        
+        .filter-btn {
+          padding: 9px 18px;
+          font-size: 13px;
+        }
       }
     </style>
   </head>
   <body>
 
     <!-- NAVBAR -->
-    <canvas id="theme-canvas"></canvas>
     <header class="navbar">
       <a href="index.html" style="text-decoration: none; color: inherit;">
         <div class="nav-profile">
           <div class="nav-profile-avatar"></div>
           <div class="nav-profile-text">
-            <strong>Mohammed Fazil Arfath</strong>
+            <strong>Mr. Fazil</strong>
             <span>Sr. Digital Marketing Specialist</span>
           </div>
         </div>
@@ -309,51 +502,50 @@
       </div>
     </header>
 
-    <!-- HERO SECTION -->
-    <section class="hero">
-      <!-- Hero Content -->
-      <div class="hero-content">
-        <h1>Trusted by leaders<br><span class="gray-text">from various industries</span></h1>
-        <p class="hero-sub">Learn why professionals trust our solutions to complete their customer journeys.</p>
-        <a href="#stats" class="hero-cta">
-          View Testimonials
-          <svg viewBox="0 0 24 24">
-            <path d="M12 5v14M5 12l7 7 7-7"/>
-          </svg>
-        </a>
-      </div>
-    </section>
+    <!-- HERO SECTION WITH STATS -->
+    <section class="community-section hero" id="hero">
+      <div class="community-container">
+        <div class="community-content">
+          <h1 class="community-heading">Real client success stories<br>that drive measurable results</h1>
+          
+          <p class="hero-sub">Discover how businesses transformed their digital presence and achieved remarkable growth through strategic marketing solutions.</p>
 
-    <!-- STATS -->
-    <section class="stats-row" id="stats">
-      <div class="stats-inner">
-        <div class="stat-cell">
-          <strong>500+</strong>
-          <span>Happy Clients</span>
-        </div>
-        <div class="stat-cell">
-          <strong>98%</strong>
-          <span>Satisfaction Rate</span>
-        </div>
-        <div class="stat-cell">
-          <strong>50+</strong>
-          <span>Industries Served</span>
-        </div>
-        <div class="stat-cell">
-          <strong>10+</strong>
-          <span>Years Experience</span>
+          <div class="community-stats">
+            <div class="stat-item">
+              <strong class="stat-number">500+</strong>
+              <span class="stat-label">Happy Clients</span>
+            </div>
+            <div class="stat-item">
+              <strong class="stat-number">98%</strong>
+              <span class="stat-label">Satisfaction</span>
+            </div>
+            <div class="stat-item">
+              <strong class="stat-number">50+</strong>
+              <span class="stat-label">Industries</span>
+            </div>
+            <div class="stat-item">
+              <strong class="stat-number">10+</strong>
+              <span class="stat-label">Years Experience</span>
+            </div>
+          </div>
         </div>
       </div>
     </section>
 
-    <!-- FILTERS -->
-    <section class="filters">
-      <button class="filter-btn is-active" data-filter="all">All</button>
-      <button class="filter-btn" data-filter="marketing">Marketing</button>
-      <button class="filter-btn" data-filter="tech">Technology</button>
-      <button class="filter-btn" data-filter="finance">Finance</button>
-      <button class="filter-btn" data-filter="healthcare">Healthcare</button>
-      <button class="filter-btn" data-filter="retail">Retail</button>
+    <!-- FILTERS SECTION -->
+    <section class="filters-section">
+      <div class="filters-header">
+        <h2 class="filters-heading">Client Success Stories</h2>
+        <p class="filters-sub">Explore testimonials from professionals across different industries</p>
+      </div>
+      <div class="filters">
+        <button class="filter-btn is-active" data-filter="all">All</button>
+        <button class="filter-btn" data-filter="marketing">Marketing</button>
+        <button class="filter-btn" data-filter="tech">Technology</button>
+        <button class="filter-btn" data-filter="finance">Finance</button>
+        <button class="filter-btn" data-filter="healthcare">Healthcare</button>
+        <button class="filter-btn" data-filter="retail">Retail</button>
+      </div>
     </section>
 
     <!-- TESTIMONIALS GRID -->
@@ -610,44 +802,7 @@
       (function() {
         const html = document.documentElement;
 
-        function initCanvas() {
-          const canvas = document.getElementById('theme-canvas');
-          if (!canvas) return;
-          const ctx = canvas.getContext('2d');
-          let W, H, orbs, raf;
-          function resize() { W = canvas.width = window.innerWidth; H = canvas.height = window.innerHeight; }
-          function makeOrbs() {
-            return [
-              { x: W*0.2, y: H*0.2, r: Math.min(W,H)*0.38, vx: 0.12, vy: 0.08, color: 'rgba(0,180,140,0.13)' },
-              { x: W*0.8, y: H*0.7, r: Math.min(W,H)*0.32, vx: -0.09, vy: 0.11, color: 'rgba(79,150,232,0.10)' },
-              { x: W*0.5, y: H*0.9, r: Math.min(W,H)*0.28, vx: 0.07, vy: -0.13, color: 'rgba(0,200,160,0.08)' },
-            ];
-          }
-          function draw() {
-            ctx.clearRect(0,0,W,H);
-            orbs.forEach(o => {
-              o.x += o.vx; o.y += o.vy;
-              if (o.x < -o.r || o.x > W+o.r) o.vx *= -1;
-              if (o.y < -o.r || o.y > H+o.r) o.vy *= -1;
-              const g = ctx.createRadialGradient(o.x,o.y,0,o.x,o.y,o.r);
-              g.addColorStop(0, o.color); g.addColorStop(1, 'transparent');
-              ctx.beginPath(); ctx.arc(o.x,o.y,o.r,0,Math.PI*2);
-              ctx.fillStyle = g; ctx.fill();
-            });
-            raf = requestAnimationFrame(draw);
-          }
-          function start() { resize(); orbs = makeOrbs(); if(raf) cancelAnimationFrame(raf); draw(); }
-          function stop() { if(raf){cancelAnimationFrame(raf);raf=null;} ctx.clearRect(0,0,W,H); }
-          window.addEventListener('resize', () => { resize(); orbs = makeOrbs(); });
-          const observer = new MutationObserver(() => {
-            if (html.getAttribute('data-theme') === 'dark') start(); else stop();
-          });
-          observer.observe(html, { attributes: true, attributeFilter: ['data-theme'] });
-          if (html.getAttribute('data-theme') === 'dark') start();
-        }
-
         document.addEventListener('DOMContentLoaded', () => {
-          initCanvas();
           const btn = document.getElementById('themeToggle');
           if (btn) {
             btn.addEventListener('click', () => {
@@ -683,3 +838,71 @@
 
   </body>
 </html>
+
+    <script>
+      // ── Community Section Parallax ──
+      (function() {
+        const floatingElements = document.querySelectorAll('.floating-element');
+        const communitySection = document.querySelector('.community-section');
+        
+        if (!floatingElements.length || !communitySection) return;
+
+        let ticking = false;
+
+        function updateParallax() {
+          const sectionRect = communitySection.getBoundingClientRect();
+          const sectionCenter = sectionRect.top + sectionRect.height / 2;
+          const viewportCenter = window.innerHeight / 2;
+          const scrollProgress = (viewportCenter - sectionCenter) / window.innerHeight;
+
+          floatingElements.forEach(el => {
+            const speed = parseFloat(el.dataset.speed) || 2;
+            const movement = scrollProgress * speed * 30;
+            
+            // Apply subtle parallax movement
+            el.style.transform = `translateY(${movement}px)`;
+          });
+
+          ticking = false;
+        }
+
+        function requestTick() {
+          if (!ticking) {
+            window.requestAnimationFrame(updateParallax);
+            ticking = true;
+          }
+        }
+
+        // Throttled scroll listener
+        window.addEventListener('scroll', requestTick, { passive: true });
+        
+        // Initial update
+        updateParallax();
+
+        // Update on resize
+        window.addEventListener('resize', updateParallax, { passive: true });
+      })();
+
+      // ── Stat Number Animation ──
+      (function() {
+        const statNumbers = document.querySelectorAll('.stat-number');
+        
+        if (!statNumbers.length) return;
+
+        const observerOptions = {
+          threshold: 0.5,
+          rootMargin: '0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+          entries.forEach(entry => {
+            if (entry.isIntersecting) {
+              entry.target.style.animation = 'fadeInUp 0.8s ease-out forwards';
+              observer.unobserve(entry.target);
+            }
+          });
+        }, observerOptions);
+
+        statNumbers.forEach(stat => observer.observe(stat));
+      })();
+    </script>

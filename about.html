@@ -64,7 +64,7 @@
         --menu-color: rgba(255,255,255,0.85);
         --btn-bg: rgba(255,255,255,0.08);
         --btn-color: #e8eaf0;
-        --page-bg: #0b0e10;
+        --page-bg: #0a1612;
         --page-color: #e8eaf0;
         --section-text: #f0f2f8;
         --muted-text: rgba(255,255,255,0.65);
@@ -108,12 +108,7 @@
         transition: background 0.4s ease, color 0.4s ease;
       }
 
-      [data-theme="dark"] body { background: #0b0e10; }
-
-      #theme-canvas {
-        display: none; position: fixed; inset: 0; z-index: 0; pointer-events: none;
-      }
-      [data-theme="dark"] #theme-canvas { display: block; }
+      [data-theme="dark"] body { background: #0a1612; }
 
       /* ── NAVBAR ── */
       .navbar {
@@ -138,7 +133,7 @@
 
       .nav-profile-avatar {
         width: 40px; height: 40px; border-radius: 50%;
-        background: url("assets/img.png") center/cover no-repeat;
+        background: url("assets/img1.jpeg") center/cover no-repeat;
         box-shadow: 0 8px 20px rgba(31, 34, 48, 0.2);
       }
 
@@ -335,7 +330,7 @@
         justify-self: end;
         align-self: stretch;
         border-radius: 14px;
-        background: url("assets/img.png")
+        background: url("assets/img1.jpeg")
           center center/cover no-repeat;
         box-shadow: 0 18px 34px rgba(25, 30, 45, 0.16);
       }
@@ -893,13 +888,12 @@
   <body>
 
     <!-- ── NAVBAR ── -->
-    <canvas id="theme-canvas"></canvas>
     <header class="navbar">
       <a href="index.html" style="text-decoration: none; color: inherit;">
         <div class="nav-profile">
           <div class="nav-profile-avatar"></div>
           <div class="nav-profile-text">
-            <strong>Mohammed Fazil Arfath</strong>
+            <strong>Mr. Fazil</strong>
             <span>Based in Bangalore</span>
           </div>
         </div>
@@ -1158,42 +1152,8 @@
       (function() {
         const html = document.documentElement;
         function initCanvas() {
-          const canvas = document.getElementById('theme-canvas');
-          if (!canvas) return;
-          const ctx = canvas.getContext('2d');
-          let W, H, orbs, raf;
-          function resize() { W = canvas.width = window.innerWidth; H = canvas.height = window.innerHeight; }
-          function makeOrbs() {
-            return [
-              { x: W*0.2, y: H*0.2, r: Math.min(W,H)*0.38, vx: 0.12, vy: 0.08, color: 'rgba(0,180,140,0.13)' },
-              { x: W*0.8, y: H*0.7, r: Math.min(W,H)*0.32, vx: -0.09, vy: 0.11, color: 'rgba(79,150,232,0.10)' },
-              { x: W*0.5, y: H*0.9, r: Math.min(W,H)*0.28, vx: 0.07, vy: -0.13, color: 'rgba(0,200,160,0.08)' },
-            ];
-          }
-          function draw() {
-            ctx.clearRect(0,0,W,H);
-            orbs.forEach(o => {
-              o.x += o.vx; o.y += o.vy;
-              if (o.x < -o.r || o.x > W+o.r) o.vx *= -1;
-              if (o.y < -o.r || o.y > H+o.r) o.vy *= -1;
-              const g = ctx.createRadialGradient(o.x,o.y,0,o.x,o.y,o.r);
-              g.addColorStop(0, o.color); g.addColorStop(1, 'transparent');
-              ctx.beginPath(); ctx.arc(o.x,o.y,o.r,0,Math.PI*2);
-              ctx.fillStyle = g; ctx.fill();
-            });
-            raf = requestAnimationFrame(draw);
-          }
-          function start() { resize(); orbs = makeOrbs(); if(raf) cancelAnimationFrame(raf); draw(); }
-          function stop() { if(raf){cancelAnimationFrame(raf);raf=null;} ctx.clearRect(0,0,W,H); }
-          window.addEventListener('resize', () => { resize(); orbs = makeOrbs(); });
-          const obs = new MutationObserver(() => {
-            if (html.getAttribute('data-theme') === 'dark') start(); else stop();
-          });
-          obs.observe(html, { attributes: true, attributeFilter: ['data-theme'] });
-          if (html.getAttribute('data-theme') === 'dark') start();
         }
         document.addEventListener('DOMContentLoaded', () => {
-          initCanvas();
           const btn = document.getElementById('themeToggle');
           if (btn) {
             btn.addEventListener('click', () => {
