@@ -190,93 +190,323 @@
         50% { transform: translateY(4px); }
       }
 
-      /* HERO SECTION - MATCHING ABOUT PAGE */
-      .community-section {
-        min-height: 100svh;
+      /* ══════════════════════════════════════════
+         COMMUNITY HERO SECTION - CIRCULAR AVATARS
+         ══════════════════════════════════════════ */
+      
+      .community-hero-section {
+        position: relative;
+        height: calc(100vh - var(--nav-height));
+        max-height: calc(100vh - var(--nav-height));
         display: flex;
-        flex-direction: column;
         align-items: center;
         justify-content: center;
-        padding: 0 var(--section-space);
-        text-align: center;
-        gap: 48px;
+        padding: clamp(20px, 3vh, 40px) var(--section-space);
+        background: var(--page-bg);
+        overflow: hidden;
       }
       
-      .community-container {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        gap: 16px;
-        max-width: 780px;
-      }
-      
-      .community-content {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        gap: 16px;
-      }
-      
-      .community-heading {
-        margin: 0;
-        font-size: clamp(34px, 4.6vw, 58px);
-        line-height: 1.08;
-        font-weight: 800;
-        max-width: 780px;
-        letter-spacing: -1.8px;
-        color: var(--section-text);
-        transition: color 0.4s ease;
-      }
-      
-      .hero-sub {
-        margin: 0;
-        max-width: 500px;
-        font-size: 16.5px;
-        line-height: 1.65;
-        color: var(--muted-text);
-        transition: color 0.4s ease;
-      }
-      
-      .community-stats {
+      .community-hero-container {
+        position: relative;
+        max-width: 900px;
         width: 100%;
-        max-width: 780px;
-        display: grid;
-        grid-template-columns: repeat(4, 1fr);
-        gap: 0;
-        border-top: 1px solid var(--card-border);
-        border-bottom: 1px solid var(--card-border);
-        margin-bottom: 0;
-        transition: border-color 0.4s ease;
+        max-height: 100%;
+        background: var(--card-bg);
+        border: 1px solid var(--card-border);
+        border-radius: clamp(20px, 3vw, 32px);
+        padding: clamp(40px, 5vh, 60px) clamp(30px, 4vw, 60px);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: clamp(24px, 4vh, 40px);
+        box-shadow: 0 20px 60px rgba(0, 0, 0, 0.08);
+        transition: all 0.4s ease;
+        overflow: hidden;
       }
       
-      .stat-item {
-        padding: 26px 16px;
-        border-right: 1px solid var(--card-border);
+      [data-theme="dark"] .community-hero-container {
+        box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+      }
+      
+      /* ══════════════════════════════════════════
+         CIRCULAR AVATAR CLUSTER
+         ══════════════════════════════════════════ */
+      
+      .avatar-cluster {
+        position: relative;
+        width: clamp(320px, 40vh, 420px);
+        height: clamp(320px, 40vh, 420px);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-shrink: 0;
+      }
+      
+      .avatar-item {
+        position: absolute;
+        border-radius: 50%;
+        background-size: cover;
+        background-position: center;
+        border: 3px solid var(--card-bg);
+        box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+        transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+        cursor: pointer;
+        animation: float 6s ease-in-out infinite;
+      }
+      
+      .avatar-item:hover {
+        transform: scale(1.15) translateY(-8px);
+        box-shadow: 0 16px 40px rgba(0, 0, 0, 0.2);
+        z-index: 10;
+      }
+      
+      [data-theme="dark"] .avatar-item {
+        border-color: rgba(255, 255, 255, 0.1);
+        box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
+      }
+      
+      [data-theme="dark"] .avatar-item:hover {
+        box-shadow: 0 16px 40px rgba(0, 0, 0, 0.6);
+      }
+      
+      /* Floating Animation */
+      @keyframes float {
+        0%, 100% { transform: translateY(0px); }
+        50% { transform: translateY(-12px); }
+      }
+      
+      /* ══════════════════════════════════════════
+         CIRCULAR POSITIONING - PERFECT CIRCLE
+         ══════════════════════════════════════════ */
+      
+      /* Top Row - 3 avatars */
+      .avatar-1 {
+        width: 80px;
+        height: 80px;
+        top: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        animation-delay: 0s;
+      }
+      
+      .avatar-2 {
+        width: 70px;
+        height: 70px;
+        top: 30px;
+        left: 30%;
+        animation-delay: 0.5s;
+      }
+      
+      .avatar-3 {
+        width: 70px;
+        height: 70px;
+        top: 30px;
+        right: 30%;
+        animation-delay: 1s;
+      }
+      
+      /* Second Row - 4 avatars */
+      .avatar-4 {
+        width: 75px;
+        height: 75px;
+        top: 90px;
+        left: 15%;
+        animation-delay: 1.5s;
+      }
+      
+      .avatar-5 {
+        width: 65px;
+        height: 65px;
+        top: 100px;
+        left: 35%;
+        animation-delay: 2s;
+      }
+      
+      .avatar-6 {
+        width: 65px;
+        height: 65px;
+        top: 100px;
+        right: 35%;
+        animation-delay: 2.5s;
+      }
+      
+      .avatar-7 {
+        width: 75px;
+        height: 75px;
+        top: 90px;
+        right: 15%;
+        animation-delay: 3s;
+      }
+      
+      /* Middle Row - 5 avatars (widest) */
+      .avatar-8 {
+        width: 85px;
+        height: 85px;
+        top: 50%;
+        left: 0;
+        transform: translateY(-50%);
+        animation-delay: 3.5s;
+      }
+      
+      .avatar-9 {
+        width: 60px;
+        height: 60px;
+        top: 50%;
+        left: 22%;
+        transform: translateY(-50%);
+        animation-delay: 4s;
+      }
+      
+      .avatar-10 {
+        width: 55px;
+        height: 55px;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        animation-delay: 4.5s;
+      }
+      
+      .avatar-11 {
+        width: 60px;
+        height: 60px;
+        top: 50%;
+        right: 22%;
+        transform: translateY(-50%);
+        animation-delay: 5s;
+      }
+      
+      .avatar-12 {
+        width: 85px;
+        height: 85px;
+        top: 50%;
+        right: 0;
+        transform: translateY(-50%);
+        animation-delay: 5.5s;
+      }
+      
+      /* Fourth Row - 4 avatars */
+      .avatar-13 {
+        width: 75px;
+        height: 75px;
+        bottom: 90px;
+        left: 15%;
+        animation-delay: 0.8s;
+      }
+      
+      .avatar-14 {
+        width: 65px;
+        height: 65px;
+        bottom: 100px;
+        left: 35%;
+        animation-delay: 1.3s;
+      }
+      
+      .avatar-15 {
+        width: 65px;
+        height: 65px;
+        bottom: 100px;
+        right: 35%;
+        animation-delay: 1.8s;
+      }
+      
+      .avatar-16 {
+        width: 75px;
+        height: 75px;
+        bottom: 90px;
+        right: 15%;
+        animation-delay: 2.3s;
+      }
+      
+      /* Bottom Row - 3 avatars */
+      .avatar-17 {
+        width: 70px;
+        height: 70px;
+        bottom: 30px;
+        left: 30%;
+        animation-delay: 2.8s;
+      }
+      
+      .avatar-18 {
+        width: 80px;
+        height: 80px;
+        bottom: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        animation-delay: 3.3s;
+      }
+      
+      .avatar-19 {
+        width: 70px;
+        height: 70px;
+        bottom: 30px;
+        right: 30%;
+        animation-delay: 3.8s;
+      }
+      
+      /* ══════════════════════════════════════════
+         CONTENT BELOW AVATARS
+         ══════════════════════════════════════════ */
+      
+      .community-hero-content {
         text-align: center;
-        transition: border-color 0.4s ease;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: clamp(12px, 2vh, 20px);
+        max-width: 600px;
       }
       
-      .stat-item:last-child {
-        border-right: none;
-      }
-      
-      .stat-number {
-        display: block;
-        font-size: clamp(26px, 2.8vw, 36px);
+      .community-hero-heading {
+        margin: 0;
+        font-size: clamp(24px, 4.5vh, 42px);
+        line-height: 1.15;
         font-weight: 800;
         letter-spacing: -1.2px;
         color: var(--section-text);
-        line-height: 1;
-        margin-bottom: 6px;
         transition: color 0.4s ease;
       }
       
-      .stat-label {
-        font-size: 12.5px;
+      .community-hero-text {
+        margin: 0;
+        font-size: clamp(14px, 1.8vh, 16px);
+        line-height: 1.6;
         color: var(--muted-text);
-        font-weight: 500;
-        letter-spacing: 0.01em;
+        max-width: 500px;
         transition: color 0.4s ease;
+      }
+      
+      .community-cta-btn {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        padding: clamp(10px, 1.5vh, 14px) clamp(24px, 4vw, 36px);
+        border-radius: 999px;
+        background: #1a1a1a;
+        color: #ffffff;
+        text-decoration: none;
+        font-size: clamp(13px, 1.6vh, 15px);
+        font-weight: 700;
+        letter-spacing: -0.2px;
+        box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+        transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+        margin-top: clamp(4px, 1vh, 8px);
+      }
+      
+      .community-cta-btn:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 12px 32px rgba(0, 0, 0, 0.3);
+        background: #2a2a2a;
+      }
+      
+      [data-theme="dark"] .community-cta-btn {
+        background: #ffffff;
+        color: #0b0e10;
+        box-shadow: 0 8px 24px rgba(255, 255, 255, 0.2);
+      }
+      
+      [data-theme="dark"] .community-cta-btn:hover {
+        background: #f0f0f0;
+        box-shadow: 0 12px 32px rgba(255, 255, 255, 0.3);
       }
 
       /* FILTERS SECTION */
@@ -413,33 +643,49 @@
         .testi-grid { grid-template-columns: 1fr; }
         .footer-bar { position: relative; flex-direction: column; text-align: center; gap: 10px; margin-top: 60px; }
         
-        /* Hero Section Mobile - Matching About Page */
-        .community-section {
-          padding: 0 var(--section-space);
-          gap: 36px;
-          min-height: 100svh;
+        /* Community Hero Section Mobile */
+        .community-hero-section {
+          padding: clamp(16px, 2vh, 24px) var(--section-space);
         }
         
-        .hero-sub {
-          font-size: 15px;
+        .community-hero-container {
+          padding: clamp(30px, 4vh, 50px) clamp(20px, 3vw, 30px);
+          gap: clamp(20px, 3vh, 32px);
         }
         
-        .community-stats {
-          grid-template-columns: repeat(2, 1fr);
-          margin-bottom: 0;
+        /* Avatar Cluster Mobile - Scaled Down */
+        .avatar-cluster {
+          width: clamp(280px, 35vh, 320px);
+          height: clamp(280px, 35vh, 320px);
         }
         
-        .stat-item:nth-child(2) {
-          border-right: none;
+        /* Scaled avatar sizes for mobile */
+        .avatar-1 { width: 50px; height: 50px; }
+        .avatar-2, .avatar-3 { width: 45px; height: 45px; }
+        .avatar-4, .avatar-7 { width: 48px; height: 48px; }
+        .avatar-5, .avatar-6 { width: 42px; height: 42px; }
+        .avatar-8, .avatar-12 { width: 55px; height: 55px; }
+        .avatar-9, .avatar-11 { width: 38px; height: 38px; }
+        .avatar-10 { width: 35px; height: 35px; }
+        .avatar-13, .avatar-16 { width: 48px; height: 48px; }
+        .avatar-14, .avatar-15 { width: 42px; height: 42px; }
+        .avatar-17, .avatar-19 { width: 45px; height: 45px; }
+        .avatar-18 { width: 50px; height: 50px; }
+        
+        /* Content Mobile */
+        .community-hero-heading {
+          font-size: clamp(22px, 5vh, 32px);
+          letter-spacing: -0.8px;
         }
         
-        .stat-item:nth-child(3) {
-          border-top: 1px solid var(--card-border);
+        .community-hero-text {
+          font-size: clamp(13px, 1.6vh, 15px);
+          line-height: 1.55;
         }
         
-        .stat-item:nth-child(4) {
-          border-top: 1px solid var(--card-border);
-          border-right: none;
+        .community-cta-btn {
+          padding: clamp(10px, 1.4vh, 12px) clamp(22px, 5vw, 28px);
+          font-size: clamp(13px, 1.5vh, 14px);
         }
         
         /* Filters Section Mobile */
@@ -467,6 +713,26 @@
         .filter-btn {
           padding: 9px 18px;
           font-size: 13px;
+        }
+      }
+      
+      @media (max-height: 700px) {
+        .community-hero-container {
+          padding: clamp(24px, 3vh, 40px) clamp(24px, 3vw, 40px);
+          gap: clamp(16px, 2.5vh, 28px);
+        }
+        
+        .avatar-cluster {
+          width: clamp(240px, 32vh, 340px);
+          height: clamp(240px, 32vh, 340px);
+        }
+        
+        .community-hero-heading {
+          font-size: clamp(20px, 3.5vh, 36px);
+        }
+        
+        .community-hero-text {
+          font-size: clamp(13px, 1.6vh, 15px);
         }
       }
     </style>
@@ -502,33 +768,49 @@
       </div>
     </header>
 
-    <!-- HERO SECTION WITH STATS -->
-    <section class="community-section hero" id="hero">
-      <div class="community-container">
-        <div class="community-content">
-          <h1 class="community-heading">Real client success stories<br>that drive measurable results</h1>
+    <!-- COMMUNITY HERO SECTION WITH CIRCULAR AVATARS -->
+    <section class="community-hero-section" id="hero">
+      <div class="community-hero-container">
+        
+        <!-- Circular Avatar Cluster -->
+        <div class="avatar-cluster">
+          <!-- Row 1 - Top -->
+          <div class="avatar-item avatar-1" style="background-image: url('https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=400&q=80');"></div>
+          <div class="avatar-item avatar-2" style="background-image: url('https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=400&q=80');"></div>
+          <div class="avatar-item avatar-3" style="background-image: url('https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=400&q=80');"></div>
           
-          <p class="hero-sub">Discover how businesses transformed their digital presence and achieved remarkable growth through strategic marketing solutions.</p>
-
-          <div class="community-stats">
-            <div class="stat-item">
-              <strong class="stat-number">500+</strong>
-              <span class="stat-label">Happy Clients</span>
-            </div>
-            <div class="stat-item">
-              <strong class="stat-number">98%</strong>
-              <span class="stat-label">Satisfaction</span>
-            </div>
-            <div class="stat-item">
-              <strong class="stat-number">50+</strong>
-              <span class="stat-label">Industries</span>
-            </div>
-            <div class="stat-item">
-              <strong class="stat-number">10+</strong>
-              <span class="stat-label">Years Experience</span>
-            </div>
-          </div>
+          <!-- Row 2 -->
+          <div class="avatar-item avatar-4" style="background-image: url('https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?auto=format&fit=crop&w=400&q=80');"></div>
+          <div class="avatar-item avatar-5" style="background-image: url('https://images.unsplash.com/photo-1438761681033-6461ffad8d80?auto=format&fit=crop&w=400&q=80');"></div>
+          <div class="avatar-item avatar-6" style="background-image: url('https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?auto=format&fit=crop&w=400&q=80');"></div>
+          <div class="avatar-item avatar-7" style="background-image: url('https://images.unsplash.com/photo-1580489944761-15a19d654956?auto=format&fit=crop&w=400&q=80');"></div>
+          
+          <!-- Row 3 - Middle -->
+          <div class="avatar-item avatar-8" style="background-image: url('https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=400&q=80');"></div>
+          <div class="avatar-item avatar-9" style="background-image: url('https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=400&q=80');"></div>
+          <div class="avatar-item avatar-10" style="background-image: url('https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&fit=crop&w=400&q=80');"></div>
+          <div class="avatar-item avatar-11" style="background-image: url('https://images.unsplash.com/photo-1557862921-37829c790f19?auto=format&fit=crop&w=400&q=80');"></div>
+          <div class="avatar-item avatar-12" style="background-image: url('https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&w=400&q=80');"></div>
+          
+          <!-- Row 4 -->
+          <div class="avatar-item avatar-13" style="background-image: url('https://images.unsplash.com/photo-1531427186611-ecfd6d936c79?auto=format&fit=crop&w=400&q=80');"></div>
+          <div class="avatar-item avatar-14" style="background-image: url('https://images.unsplash.com/photo-1539571696357-5a69c17a67c6?auto=format&fit=crop&w=400&q=80');"></div>
+          <div class="avatar-item avatar-15" style="background-image: url('https://images.unsplash.com/photo-1524504388940-b1c1722653e1?auto=format&fit=crop&w=400&q=80');"></div>
+          <div class="avatar-item avatar-16" style="background-image: url('https://images.unsplash.com/photo-1517841905240-472988babdf9?auto=format&fit=crop&w=400&q=80');"></div>
+          
+          <!-- Row 5 - Bottom -->
+          <div class="avatar-item avatar-17" style="background-image: url('https://images.unsplash.com/photo-1488161628813-04466f872be2?auto=format&fit=crop&w=400&q=80');"></div>
+          <div class="avatar-item avatar-18" style="background-image: url('https://images.unsplash.com/photo-1463453091185-61582044d556?auto=format&fit=crop&w=400&q=80');"></div>
+          <div class="avatar-item avatar-19" style="background-image: url('https://images.unsplash.com/photo-1502685104226-ee32379fefbe?auto=format&fit=crop&w=400&q=80');"></div>
         </div>
+        
+        <!-- Content Below Avatars -->
+        <div class="community-hero-content">
+          <h1 class="community-hero-heading">Trusted by 500+ Happy Clients!</h1>
+          <p class="community-hero-text">Join our growing community of successful businesses who transformed their digital presence and achieved remarkable growth through strategic marketing solutions.</p>
+          <a href="#testimonials" class="community-cta-btn">Read Success Stories</a>
+        </div>
+        
       </div>
     </section>
 
